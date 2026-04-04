@@ -1,1119 +1,922 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="한스 스킨케어 - Northbrook, IL. 전문 피부 관리, 반영구 메이크업, 속눈썹 펌. Professional skincare, semi-permanent makeup & lash services.">
-<title>한스 스킨케어 | Han's Skincare – Northbrook, IL</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════
-   TOKENS & RESET
-   ═══════════════════════════════════ */
-:root {
-  --bg: #f8f4f0;
-  --bg-warm: #f3ece5;
-  --bg-deep: #ede4da;
-  --white: #ffffff;
-  --cream: #faf7f3;
-  --text: #2d1f18;
-  --text-soft: #6b5a50;
-  --text-muted: #a09080;
-  --rose: #c98b7a;
-  --rose-dark: #a06050;
-  --rose-deeper: #8a4a3c;
-  --rose-light: #f5e6e1;
-  --rose-pale: #faf0ec;
-  --gold: #c4a35a;
-  --gold-light: #f5ecd4;
-  --green: #7a9e6a;
-  --green-light: #e8f0e4;
-  --border: #e8ddd4;
-  --shadow-sm: 0 2px 12px rgba(120,80,60,0.06);
-  --shadow-md: 0 8px 30px rgba(120,80,60,0.08);
-  --shadow-lg: 0 16px 50px rgba(120,80,60,0.12);
-  --radius: 16px;
-  --radius-lg: 24px;
-  --nav-h: 72px;
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Noto Sans KR', sans-serif;
-  --font-serif-kr: 'Noto Serif KR', serif;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Han's Skin Care · 한's 스킨케어</title>
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  <!-- Fonts: Playfair Display (elegant display) + DM Sans (clean body) + Noto Serif KR (Korean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 
-/* ═══════════════════════════════════
-   NAVIGATION
-   ═══════════════════════════════════ */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h);
-  background: rgba(248,244,240,0.85);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border-bottom: 1px solid rgba(232,221,212,0.6);
-  z-index: 100;
-  transition: background 0.4s, box-shadow 0.4s;
-}
-.nav.scrolled {
-  background: rgba(255,255,255,0.92);
-  box-shadow: 0 1px 20px rgba(120,80,60,0.08);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  height: 100%; padding: 0 32px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-brand {
-  display: flex; align-items: baseline; gap: 10px;
-}
-.nav-brand-name {
-  font-family: var(--font-display);
-  font-size: 1.6rem; font-weight: 400; font-style: italic;
-  color: var(--rose-dark);
-  letter-spacing: 0.03em;
-}
-.nav-brand-sub {
-  font-size: 0.7rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--text-muted);
-  font-weight: 500;
-}
-.nav-links { display: flex; gap: 6px; align-items: center; }
-.nav-link {
-  padding: 8px 16px; font-size: 0.88rem; font-weight: 400;
-  color: var(--text-soft); border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
-  letter-spacing: 0.02em;
-}
-.nav-link:hover { color: var(--rose-dark); background: var(--rose-pale); }
-.nav-cta {
-  padding: 10px 24px; font-size: 0.88rem; font-weight: 500;
-  color: #fff; background: var(--rose-dark);
-  border-radius: 30px; margin-left: 8px;
-  transition: background 0.2s, transform 0.15s;
-  letter-spacing: 0.02em;
-}
-.nav-cta:hover { background: var(--rose-deeper); transform: translateY(-1px); }
+  <style>
+    /* =============================================================
+       HAN'S SKIN CARE
+       White · Blush pink · Soft, graphic-forward, bilingual EN/KR
+       ============================================================= */
 
-/* Mobile menu */
-.nav-toggle {
-  display: none; width: 44px; height: 44px;
-  align-items: center; justify-content: center;
-  flex-direction: column; gap: 5px;
-}
-.nav-toggle span {
-  display: block; width: 22px; height: 2px;
-  background: var(--text-soft); border-radius: 2px;
-  transition: all 0.3s;
-}
-.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    :root {
+      --white:       #FFFFFF;
+      --cream:       #FFFBF9;
+      --blush:       #F9E8E3;
+      --blush-mid:   #F2CFC5;
+      --blush-deep:  #E8A99A;
+      --rose:        #D4847A;
+      --rose-dark:   #B8655B;
+      --text:        #3A2F2D;
+      --text-muted:  #8C7B77;
+      --text-light:  #B5A5A0;
+      --border:      #F0E0DA;
 
-.mobile-menu {
-  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-  background: rgba(248,244,240,0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-  z-index: 99;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu .nav-link { font-size: 1.2rem; padding: 14px 28px; }
-.mobile-menu .nav-cta { font-size: 1.1rem; margin: 12px 0 0; }
+      --font-display: 'Playfair Display', 'Georgia', serif;
+      --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-kr:      'Noto Serif KR', serif;
 
-/* ═══════════════════════════════════
-   HERO
-   ═══════════════════════════════════ */
-.hero {
-  min-height: 100vh; min-height: 100dvh;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  padding: calc(var(--nav-h) + 40px) 32px 60px;
-}
-.hero-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 30% 20%, rgba(201,139,122,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 75% 70%, rgba(196,163,90,0.08) 0%, transparent 50%),
-    linear-gradient(170deg, var(--bg) 0%, var(--bg-warm) 50%, var(--bg-deep) 100%);
-}
-.hero-pattern {
-  position: absolute; inset: 0; opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-.hero-content {
-  position: relative; text-align: center;
-  max-width: 800px;
-  animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 20px; border-radius: 30px;
-  background: var(--white); border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.82rem; color: var(--text-soft);
-  letter-spacing: 0.12em; text-transform: uppercase;
-  font-weight: 500; margin-bottom: 28px;
-  animation: fadeUp 1s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.hero-badge-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 3px rgba(122,158,106,0.2);
-}
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 300; font-style: italic;
-  line-height: 1.1; color: var(--text);
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-.hero-title-kr {
-  font-family: var(--font-serif-kr);
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-weight: 300; color: var(--text-muted);
-  letter-spacing: 0.25em;
-  margin-bottom: 28px;
-  animation: fadeUp 1s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.hero-desc {
-  font-size: 1.1rem; color: var(--text-soft);
-  line-height: 1.9; max-width: 540px; margin: 0 auto 40px;
-  font-weight: 300;
-  animation: fadeUp 1s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.hero-actions {
-  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-  animation: fadeUp 1s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 14px 32px; border-radius: 30px;
-  font-size: 0.95rem; font-weight: 500;
-  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-  letter-spacing: 0.02em;
-}
-.btn-primary {
-  background: var(--rose-dark); color: #fff;
-  box-shadow: 0 4px 20px rgba(160,96,80,0.3);
-}
-.btn-primary:hover { background: var(--rose-deeper); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(160,96,80,0.35); }
-.btn-outline {
-  background: var(--white); color: var(--text);
-  border: 1.5px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-.btn-outline:hover { border-color: var(--rose); color: var(--rose-dark); transform: translateY(-2px); }
+      --max-width: 1200px;
+      --section-pad: 120px 24px;
+    }
 
-.hero-scroll-hint {
-  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.15em;
-  text-transform: uppercase;
-  animation: fadeUp 1s 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.scroll-line {
-  width: 1px; height: 40px; background: var(--border); position: relative; overflow: hidden;
-}
-.scroll-line::after {
-  content: ''; position: absolute; top: -100%; left: 0;
-  width: 100%; height: 100%; background: var(--rose);
-  animation: scrollDown 2s infinite;
-}
-@keyframes scrollDown { 0% { top: -100%; } 50% { top: 100%; } 100% { top: 100%; } }
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a   { color: inherit; text-decoration: none; }
 
-/* ═══════════════════════════════════
-   SECTIONS COMMON
-   ═══════════════════════════════════ */
-.section { padding: 100px 32px; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
-.section-label {
-  font-size: 0.75rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--rose);
-  font-weight: 600; margin-bottom: 12px;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400; font-style: italic;
-  line-height: 1.2; color: var(--text);
-  margin-bottom: 16px;
-}
-.section-desc {
-  font-size: 1rem; color: var(--text-soft);
-  max-width: 540px; line-height: 1.8; font-weight: 300;
-}
-.section-header { margin-bottom: 56px; }
-.section-header.center { text-align: center; }
-.section-header.center .section-desc { margin: 0 auto; }
+    /* ── Utility ── */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-/* Reveal animation */
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
+    .label {
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 13px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--rose);
+      margin-bottom: 16px;
+    }
+    .heading {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(36px, 5.5vw, 60px); line-height: 1.15;
+      color: var(--text); margin-bottom: 8px;
+    }
+    .heading em { font-style: italic; color: var(--rose); }
+    .heading-kr {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: clamp(16px, 2.2vw, 22px);
+      color: var(--text-muted); margin-bottom: 24px;
+    }
+    .subtext {
+      font-size: 18px; color: var(--text-muted);
+      max-width: 540px; line-height: 1.85;
+    }
 
-/* ═══════════════════════════════════
-   SERVICES
-   ═══════════════════════════════════ */
-.services-bg { background: var(--white); }
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
-.service-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px 30px;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  position: relative; overflow: hidden;
-}
-.service-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; border-radius: 3px 3px 0 0;
-  transition: height 0.35s;
-}
-.service-card.facial::before { background: linear-gradient(90deg, var(--rose), var(--rose-dark)); }
-.service-card.semiperm::before { background: linear-gradient(90deg, var(--gold), #d4b36a); }
-.service-card.eyelash::before { background: linear-gradient(90deg, var(--green), #8ab47a); }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.service-card:hover::before { height: 4px; }
-.service-icon {
-  width: 60px; height: 60px; border-radius: 16px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem; margin-bottom: 24px;
-}
-.facial .service-icon { background: var(--rose-light); }
-.semiperm .service-icon { background: var(--gold-light); }
-.eyelash .service-icon { background: var(--green-light); }
-.service-title {
-  font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 500;
-  margin-bottom: 4px; color: var(--text);
-}
-.service-title-kr {
-  font-size: 0.85rem; color: var(--text-muted);
-  margin-bottom: 16px; font-weight: 400;
-}
-.service-desc {
-  font-size: 0.92rem; color: var(--text-soft);
-  line-height: 1.8; margin-bottom: 24px; font-weight: 300;
-}
-.service-list {
-  list-style: none; display: flex; flex-direction: column; gap: 8px;
-}
-.service-list li {
-  font-size: 0.85rem; color: var(--text-soft);
-  padding-left: 20px; position: relative;
-}
-.service-list li::before {
-  content: ''; position: absolute; left: 0; top: 8px;
-  width: 6px; height: 6px; border-radius: 50%;
-}
-.facial .service-list li::before { background: var(--rose); }
-.semiperm .service-list li::before { background: var(--gold); }
-.eyelash .service-list li::before { background: var(--green); }
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(36px);
+      transition: opacity 0.9s cubic-bezier(.22,1,.36,1),
+                  transform 0.9s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ═══════════════════════════════════
-   ABOUT / STORY
-   ═══════════════════════════════════ */
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: center;
-}
-.about-image-frame {
-  aspect-ratio: 4/5; border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--rose-light) 0%, var(--bg-deep) 50%, var(--gold-light) 100%);
-  position: relative; overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-.about-image-placeholder {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  color: var(--text-muted); gap: 12px;
-}
-.about-image-placeholder-icon { font-size: 3rem; opacity: 0.4; }
-.about-image-placeholder-text { font-size: 0.85rem; opacity: 0.6; text-align: center; line-height: 1.6; }
-.about-text .section-desc { max-width: 100%; margin-bottom: 28px; }
-.about-quote {
-  font-family: var(--font-serif-kr);
-  font-size: 1.05rem; color: var(--text);
-  line-height: 2; padding: 20px 24px;
-  border-left: 3px solid var(--rose);
-  background: var(--rose-pale);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  margin-bottom: 32px; font-weight: 300;
-}
-.about-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
-.about-stat-num {
-  font-family: var(--font-display);
-  font-size: 2.2rem; font-weight: 400;
-  color: var(--rose-dark); line-height: 1;
-}
-.about-stat-label {
-  font-size: 0.8rem; color: var(--text-muted);
-  margin-top: 4px; font-weight: 400;
-}
+    /* ── SVG decorative petal (reused) ── */
+    .deco-petal {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.12;
+    }
 
-/* ═══════════════════════════════════
-   GALLERY / BEFORE-AFTER
-   ═══════════════════════════════════ */
-.gallery-bg { background: var(--bg-warm); }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.gallery-item {
-  border-radius: var(--radius-lg); overflow: hidden;
-  background: var(--white); border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.gallery-image {
-  aspect-ratio: 1; position: relative;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.5rem; color: var(--text-muted);
-}
-.gallery-image.rose-bg { background: linear-gradient(135deg, var(--rose-pale), var(--rose-light)); }
-.gallery-image.gold-bg { background: linear-gradient(135deg, var(--gold-light), #f0e4c8); }
-.gallery-image.green-bg { background: linear-gradient(135deg, var(--green-light), #d4e8d0); }
-.gallery-ba-badge {
-  position: absolute; top: 12px; left: 12px;
-  padding: 4px 12px; border-radius: 20px;
-  background: rgba(255,255,255,0.9); backdrop-filter: blur(8px);
-  font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--rose-dark);
-}
-.gallery-caption {
-  padding: 16px 20px;
-}
-.gallery-caption-title {
-  font-size: 0.9rem; font-weight: 500; margin-bottom: 2px;
-}
-.gallery-caption-sub {
-  font-size: 0.78rem; color: var(--text-muted);
-}
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed; inset: 0 0 auto;
+      z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      height: 76px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: baseline; gap: 10px; }
+    .nav-logo-en {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 24px; color: var(--text);
+    }
+    .nav-logo-kr {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: 14px; color: var(--text-light);
+    }
 
-/* ═══════════════════════════════════
-   PROCESS
-   ═══════════════════════════════════ */
-.process-bg { background: var(--white); }
-.process-steps {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
-  position: relative;
-}
-.process-steps::before {
-  content: ''; position: absolute;
-  top: 36px; left: 12%; right: 12%;
-  height: 1px; background: var(--border);
-}
-.process-step { text-align: center; position: relative; }
-.process-num {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: var(--bg); border: 2px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 20px; position: relative; z-index: 1;
-  font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 400; font-style: italic;
-  color: var(--rose-dark);
-  transition: all 0.3s;
-}
-.process-step:hover .process-num {
-  background: var(--rose-dark); color: #fff; border-color: var(--rose-dark);
-}
-.process-step-title {
-  font-family: var(--font-display);
-  font-size: 1.2rem; font-weight: 500;
-  margin-bottom: 8px; color: var(--text);
-}
-.process-step-desc {
-  font-size: 0.85rem; color: var(--text-soft);
-  line-height: 1.7; font-weight: 300;
-}
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text-muted); transition: color .3s;
+    }
+    .nav-links a:hover { color: var(--rose); }
 
-/* ═══════════════════════════════════
-   TESTIMONIAL
-   ═══════════════════════════════════ */
-.testimonial-bg {
-  background: linear-gradient(160deg, var(--rose-deeper) 0%, var(--rose-dark) 40%, #b07a5a 100%);
-  color: #fff;
-}
-.testimonials {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-}
-.testimonial-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  backdrop-filter: blur(10px);
-}
-.testimonial-stars { font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
-.testimonial-text {
-  font-size: 0.95rem; line-height: 1.9;
-  margin-bottom: 20px; font-weight: 300;
-  opacity: 0.95;
-}
-.testimonial-author { font-size: 0.85rem; font-weight: 500; }
-.testimonial-author-sub { font-size: 0.78rem; opacity: 0.6; margin-top: 2px; }
+    .nav-cta {
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 12px 32px;
+      background: var(--rose); color: var(--white);
+      border: none; border-radius: 40px;
+      transition: background .3s;
+    }
+    .nav-cta:hover { background: var(--rose-dark); }
 
-.testimonial-bg .section-label { color: rgba(255,255,255,0.6); }
-.testimonial-bg .section-title { color: #fff; }
-.testimonial-bg .section-desc { color: rgba(255,255,255,0.75); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--text); margin: 6px 0;
+    }
 
-/* ═══════════════════════════════════
-   CONTACT / LOCATION
-   ═══════════════════════════════════ */
-.contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-}
-.contact-info-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 40px;
-  box-shadow: var(--shadow-sm);
-}
-.contact-info-row {
-  display: flex; gap: 16px; align-items: flex-start;
-  padding: 16px 0; border-bottom: 1px solid var(--border);
-}
-.contact-info-row:last-child { border-bottom: none; }
-.contact-info-icon {
-  width: 44px; height: 44px; border-radius: 12px;
-  background: var(--rose-pale);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; flex-shrink: 0;
-}
-.contact-info-label {
-  font-size: 0.78rem; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 0.1em;
-  font-weight: 500; margin-bottom: 4px;
-}
-.contact-info-value {
-  font-size: 0.95rem; color: var(--text); line-height: 1.6;
-}
-.contact-map {
-  border-radius: var(--radius-lg); overflow: hidden;
-  background: var(--bg-deep); border: 1px solid var(--border);
-  aspect-ratio: 1;
-  display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 16px;
-  box-shadow: var(--shadow-sm);
-}
-.contact-map-icon { font-size: 3rem; opacity: 0.3; }
-.contact-map-text {
-  font-size: 0.85rem; color: var(--text-muted); text-align: center; line-height: 1.6;
-}
-.contact-map-btn {
-  padding: 10px 24px; border-radius: 30px;
-  background: var(--rose-dark); color: #fff;
-  font-size: 0.85rem; font-weight: 500;
-  transition: all 0.2s;
-}
-.contact-map-btn:hover { background: var(--rose-deeper); }
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      padding: 180px 24px 100px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+    }
 
-/* ═══════════════════════════════════
-   CTA BANNER
-   ═══════════════════════════════════ */
-.cta-section { background: var(--bg-warm); }
-.cta-banner {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 56px 48px;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-}
-.cta-banner .section-title { margin-bottom: 12px; }
-.cta-banner .section-desc { margin: 0 auto 32px; }
+    .hero-bg-photo {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+    .hero-bg-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,251,249,0.75) 0%, rgba(255,255,255,0.60) 100%);
+    }
 
-/* ═══════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════ */
-.footer {
-  background: var(--text);
-  color: rgba(255,255,255,0.6);
-  padding: 48px 32px 32px;
-}
-.footer-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 20px;
-}
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 1.3rem; font-style: italic;
-  color: rgba(255,255,255,0.85);
-}
-.footer-links { display: flex; gap: 24px; }
-.footer-link {
-  font-size: 0.82rem; color: rgba(255,255,255,0.5);
-  transition: color 0.2s; letter-spacing: 0.02em;
-}
-.footer-link:hover { color: rgba(255,255,255,0.85); }
-.footer-copy {
-  width: 100%; text-align: center;
-  font-size: 0.75rem; color: rgba(255,255,255,0.3);
-  margin-top: 24px; padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+    /* Large decorative bloom behind hero */
+    .hero-bloom {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      pointer-events: none;
+      opacity: .25;
+    }
 
-/* ═══════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════ */
-@media (max-width: 900px) {
-  .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-image-frame { max-width: 400px; margin: 0 auto; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-steps { grid-template-columns: repeat(2, 1fr); }
-  .process-steps::before { display: none; }
-  .testimonials { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
-  .contact-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 680px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-  .section { padding: 72px 20px; }
-  .hero { padding: calc(var(--nav-h) + 20px) 20px 50px; }
-  .gallery-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-  .process-steps { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
-  .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .cta-banner { padding: 40px 24px; }
-}
+    .hero-label {
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 14px; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--rose);
+      margin-bottom: 28px; position: relative;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(46px, 8vw, 90px); line-height: 1.05;
+      margin-bottom: 12px; position: relative;
+    }
+    .hero h1 em { font-style: italic; color: var(--rose); }
+    .hero-kr {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: clamp(18px, 3vw, 26px);
+      color: var(--text-muted);
+      margin-bottom: 32px; position: relative;
+    }
+    .hero-sub {
+      font-size: 19px; color: var(--text-muted);
+      max-width: 500px; margin: 0 auto 48px;
+      line-height: 1.85; position: relative;
+    }
+    .btn {
+      display: inline-block;
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 18px 52px;
+      background: var(--rose); color: var(--white);
+      border-radius: 40px;
+      transition: background .3s, transform .2s;
+      position: relative;
+    }
+    .btn:hover { background: var(--rose-dark); transform: translateY(-2px); }
 
-/* ═══════════════════════════════════
-   LANGUAGE TOGGLE
-   ═══════════════════════════════════ */
-.lang-toggle {
-  display: inline-flex; border-radius: 8px; overflow: hidden;
-  border: 1px solid var(--border); font-size: 0.78rem;
-}
-.lang-btn {
-  padding: 6px 14px; background: transparent;
-  color: var(--text-muted); font-weight: 500;
-  transition: all 0.2s; letter-spacing: 0.02em;
-}
-.lang-btn.active { background: var(--rose-dark); color: #fff; }
-.lang-btn:hover:not(.active) { background: var(--rose-pale); }
-</style>
+    .hero-contact {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 12px; margin-bottom: 36px; position: relative;
+    }
+    .hero-contact-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 15px; color: var(--text-muted);
+    }
+    .hero-contact-item svg { color: var(--rose); flex-shrink: 0; }
+    .hero-contact-item a { color: var(--rose); border-bottom: 1px solid transparent; transition: border-color .3s; }
+    .hero-contact-item a:hover { border-color: var(--rose); }
+    .hero-contact-item span { text-align: left; line-height: 1.5; }
+
+    .hero-actions {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-kakao {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #391B1B; color: #FEE500;
+    }
+    .btn-kakao:hover { background: #2A1010; }
+    .btn-kakao svg { fill: #FEE500; }
+
+    /* ============================================================
+       DECORATIVE PETAL DIVIDER
+    ============================================================ */
+    .petal-divider {
+      display: flex; align-items: center; justify-content: center;
+      padding: 48px 24px;
+    }
+    .petal-divider svg { opacity: .35; }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services { padding: var(--section-pad); }
+    .services-head { text-align: center; margin-bottom: 72px; }
+    .services-head .subtext { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .svc {
+      text-align: center;
+      padding: 0 0 48px;
+      background: var(--cream);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
+    }
+    .svc:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(212,132,122,.12);
+    }
+
+    /* Service card photo area */
+    .svc-photo {
+      width: 100%; aspect-ratio: 4/3;
+      background: var(--blush);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .svc-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .svc-photo-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 12px;
+      color: var(--text-light);
+    }
+    .svc-photo-placeholder svg { opacity: .4; }
+    .svc-photo-placeholder span {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      opacity: .5;
+    }
+    .svc-body { padding: 32px 36px 0; }
+
+    .svc h3 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 24px; margin-bottom: 4px;
+    }
+    .svc .svc-kr {
+      font-family: var(--font-kr); font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .svc p:last-child {
+      font-size: 15px; color: var(--text-muted); line-height: 1.8;
+    }
+
+    /* Small decorative corner petal on cards */
+    .svc::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 80px; height: 80px;
+      background: var(--blush-mid);
+      border-radius: 50%;
+      opacity: .15;
+    }
+
+    /* ============================================================
+       PHILOSOPHY / ABOUT
+    ============================================================ */
+    .about {
+      padding: var(--section-pad);
+      background: var(--blush);
+      position: relative; overflow: hidden;
+    }
+    /* Large background circle */
+    .about-bg-circle {
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: var(--blush-mid);
+      opacity: .25;
+      pointer-events: none;
+    }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      position: relative;
+    }
+
+    /* Photo placeholder with rounded corners and overlay */
+    .about-img {
+      aspect-ratio: 4/5;
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      box-shadow: 0 24px 80px rgba(184,101,91,.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      position: absolute; inset: 0;
+    }
+    .about-img-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 14px;
+      color: var(--text-light);
+      z-index: 1;
+    }
+    .about-img-placeholder svg { opacity: .35; }
+    .about-img-placeholder span {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      opacity: .45;
+    }
+    /* Hide placeholder when a real image is present */
+    .about-img img ~ .about-img-placeholder { display: none; }
+
+    .about-text .subtext { max-width: 100%; }
+    .about-text p {
+      font-size: 17px; color: var(--text-muted);
+      line-height: 1.9; margin-bottom: 16px;
+    }
+
+    /* Ingredient badges */
+    .badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 28px;
+    }
+    .badge {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 8px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      color: var(--rose);
+    }
+
+    .about-sig {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 24px; color: var(--rose); margin-top: 32px;
+    }
+    .about-sig-kr {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: 16px; color: var(--text-light);
+    }
+
+    /* ============================================================
+       EXPERIENCE BANNER (full-width graphic section)
+    ============================================================ */
+    .experience {
+      padding: 80px 24px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      background: var(--white);
+    }
+    .experience-inner {
+      max-width: 900px; margin: 0 auto;
+      position: relative;
+    }
+
+    /* Floating decorative shapes */
+    .float-shape {
+      position: absolute; pointer-events: none; opacity: .15;
+      border-radius: 50%;
+    }
+    .float-shape-1 { width: 200px; height: 200px; background: var(--blush-mid); top: -60px; left: -80px; }
+    .float-shape-2 { width: 140px; height: 140px; background: var(--blush); bottom: -40px; right: -60px; }
+    .float-shape-3 { width: 80px; height: 80px; background: var(--blush-deep); top: 20px; right: 40px; }
+
+    .experience h2 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(32px, 5vw, 52px); line-height: 1.2;
+      margin-bottom: 8px; position: relative;
+    }
+    .experience .heading-kr { position: relative; }
+    .experience p {
+      font-size: 18px; color: var(--text-muted);
+      max-width: 520px; margin: 0 auto;
+      line-height: 1.85; position: relative;
+    }
+
+    /* Stats row */
+    .stats {
+      display: flex; justify-content: center; gap: 64px;
+      margin-top: 56px; position: relative;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 48px; color: var(--rose);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text-muted); margin-top: 8px;
+    }
+    .stat-label-kr {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: 12px; color: var(--text-light);
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .reviews { padding: var(--section-pad); background: var(--cream); }
+    .reviews-head { text-align: center; margin-bottom: 72px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .review {
+      padding: 44px 40px;
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    /* Pink accent circle top-right */
+    .review::before {
+      content: '';
+      position: absolute;
+      top: -12px; right: 32px;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--blush-mid);
+    }
+
+    /* Large stylized quote */
+    .review-quote-mark {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 64px; color: var(--blush-mid);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .review blockquote {
+      font-size: 16px; font-style: normal;
+      line-height: 1.85; margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    /* Stars */
+    .review-stars { color: var(--rose); font-size: 14px; letter-spacing: 3px; margin-bottom: 16px; }
+
+    .review-who {
+      font-size: 14px; font-weight: 500;
+      color: var(--rose);
+    }
+
+    /* ============================================================
+       CONTACT / HOURS
+    ============================================================ */
+    .contact {
+      padding: var(--section-pad);
+      background: var(--blush);
+      position: relative; overflow: hidden;
+    }
+    .contact-bg-shape {
+      position: absolute;
+      bottom: -150px; left: -150px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: var(--blush-mid);
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    .contact-head { text-align: center; margin-bottom: 64px; position: relative; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; position: relative;
+      max-width: 720px; margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 44px 36px;
+      text-align: center;
+    }
+
+    /* Card icon */
+    .contact-card-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-card-icon svg { width: 24px; height: 24px; stroke: var(--rose); fill: none; stroke-width: 1.5; }
+
+    .contact-card h3 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 22px; margin-bottom: 4px;
+    }
+    .contact-card .cb-kr {
+      font-family: var(--font-kr); font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .contact-card p,
+    .contact-card address {
+      font-style: normal; font-size: 15px;
+      color: var(--text-muted); line-height: 2;
+    }
+    .contact-card a {
+      color: var(--rose);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+    .contact-card a:hover { border-color: var(--rose); }
+
+    .hours {
+      width: 100%; font-size: 15px;
+      color: var(--text-muted); border-collapse: collapse;
+      text-align: left;
+    }
+    .hours td { padding: 6px 0; }
+    .hours td:last-child { text-align: right; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      padding: 56px 24px;
+      background: var(--text);
+      text-align: center;
+      color: var(--blush);
+    }
+    .footer-logo { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-bottom: 20px; }
+    .footer-logo-en {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 22px; color: var(--white);
+    }
+    .footer-logo-kr {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: 14px; color: var(--blush-mid);
+    }
+
+    .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; }
+    .footer-links a {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blush-mid); transition: color .3s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 12px; color: var(--text-light); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stats { gap: 36px; flex-wrap: wrap; }
+    }
+    @media (max-width: 680px) {
+      :root { --section-pad: 80px 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+      .hero { padding: 150px 20px 80px; }
+      .hero-bloom { width: 400px; height: 400px; }
+      .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .stats { gap: 24px; }
+      .stat-num { font-size: 36px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-contact-item span { font-size: 14px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ═══ NAVIGATION ═══ -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="javascript:void(0)" onclick="scrollTo_('hero')" class="nav-brand">
-      <span class="nav-brand-name">Han's Skincare</span>
-      <span class="nav-brand-sub">한스 스킨케어</span>
-    </a>
-    <div class="nav-links">
-      <a href="javascript:void(0)" onclick="scrollTo_('services')" class="nav-link">서비스 Services</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('about')" class="nav-link">소개 About</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('gallery')" class="nav-link">갤러리 Gallery</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('contact')" class="nav-link">연락처 Contact</a>
-      <a href="tel:+18471234567" class="nav-cta">예약 Book Now</a>
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-en">Han's Skin Care</span>
+        <span class="nav-logo-kr">한's 스킨케어</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Book Now</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-    <button class="nav-toggle" id="nav-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="javascript:void(0)" onclick="closeMenu();scrollTo_('services')" class="nav-link">서비스 Services</a>
-  <a href="javascript:void(0)" onclick="closeMenu();scrollTo_('about')" class="nav-link">소개 About</a>
-  <a href="javascript:void(0)" onclick="closeMenu();scrollTo_('gallery')" class="nav-link">갤러리 Gallery</a>
-  <a href="javascript:void(0)" onclick="closeMenu();scrollTo_('contact')" class="nav-link">연락처 Contact</a>
-  <a href="tel:+18471234567" class="nav-cta" onclick="closeMenu()">예약 Book Now</a>
-</div>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      Northbrook, Illinois
-    </div>
-    <h1 class="hero-title">Han's Skincare</h1>
-    <p class="hero-title-kr">한 스 스 킨 케 어</p>
-    <p class="hero-desc">
-      전문 피부 관리, 반영구 메이크업, 속눈썹 펌<br>
-      Professional skincare, semi-permanent makeup &amp; lash services.<br>
-      아름다움을 위한 섬세한 손길.
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <!-- ↓ Replace your-photo.jpg with your image filename or URL -->
+    <div class="hero-bg-photo" style="background-image: url('your-photo.jpg')"></div>
+
+    <!-- Decorative bloom SVG -->
+    <svg class="hero-bloom" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bloom-grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#F2CFC5" stop-opacity=".6"/>
+          <stop offset="100%" stop-color="#F9E8E3" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="350" cy="350" r="280" fill="url(#bloom-grad)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".15" transform="rotate(0,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".12" transform="rotate(60,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".1" transform="rotate(120,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".08" transform="rotate(180,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".06" transform="rotate(240,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".05" transform="rotate(300,350,350)"/>
+    </svg>
+
+    <p class="hero-label reveal">Beauty &amp; Wellness Studio</p>
+    <h1 class="reveal"><em>Han's</em><br>Skin Care</h1>
+    <p class="hero-kr reveal">한's 스킨케어</p>
+    <p class="hero-sub reveal">
+      Facials · Semi-Permanent Makeup · Eyelash Perms
     </p>
-    <div class="hero-actions">
-      <a href="tel:+18471234567" class="btn btn-primary">📞 예약하기 Book Now</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('services')" class="btn btn-outline">서비스 보기 Our Services</a>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <div class="scroll-line"></div>
-    Scroll
-  </div>
-</section>
 
-<!-- ═══ SERVICES ═══ -->
-<section class="section services-bg" id="services">
-  <div class="section-inner">
-    <div class="section-header center reveal">
-      <div class="section-label">Services · 서비스</div>
-      <h2 class="section-title">Beauty with Care</h2>
-      <p class="section-desc">
-        고객 한 분 한 분의 피부 상태와 고민에 맞춘 맞춤형 시술로<br>
-        자연스럽고 아름다운 결과를 만들어 드립니다.
-      </p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card facial reveal">
-        <div class="service-icon">🧖</div>
-        <div class="service-title">Facial Care</div>
-        <div class="service-title-kr">얼굴 관리 · 피부 케어</div>
-        <div class="service-desc">
-          피부 타입과 고민에 맞춘 전문 페이셜 트리트먼트.
-          딥클렌징부터 LED 테라피, 리프팅까지 다양한 프로그램을 제공합니다.
-        </div>
-        <ul class="service-list">
-          <li>딥클렌징 Deep Cleansing</li>
-          <li>수분 케어 Hydration Therapy</li>
-          <li>LED 트리트먼트 LED Treatment</li>
-          <li>리프팅 케어 Lifting Care</li>
-          <li>안티에이징 Anti-Aging</li>
-        </ul>
+    <div class="hero-contact reveal">
+      <div class="hero-contact-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>50001 Newport Drive, Suite 2<br>Illinois, IL 60008</span>
       </div>
-      <div class="service-card semiperm reveal">
-        <div class="service-icon">✏️</div>
-        <div class="service-title">Semi-Permanent</div>
-        <div class="service-title-kr">반영구 메이크업 · 타투</div>
-        <div class="service-desc">
-          자연스러운 반영구 메이크업으로 매일 아침 시간을 절약하세요.
-          섬세한 기술력으로 자연스러운 아름다움을 완성합니다.
-        </div>
-        <ul class="service-list">
-          <li>눈썹 엠보 Eyebrow Embroidery</li>
-          <li>파우더 눈썹 Powder Brows</li>
-          <li>입술 라인 Lip Blush</li>
-          <li>아이라인 Eyeliner</li>
-          <li>헤어라인 Hairline</li>
-        </ul>
-      </div>
-      <div class="service-card eyelash reveal">
-        <div class="service-icon">👁️</div>
-        <div class="service-title">Lash Perm</div>
-        <div class="service-title-kr">속눈썹 펌 · 래쉬</div>
-        <div class="service-desc">
-          자연 속눈썹을 살린 아름다운 컬.
-          눈매를 더욱 또렷하게 만들어주는 전문 속눈썹 펌 서비스입니다.
-        </div>
-        <ul class="service-list">
-          <li>내추럴 컬 Natural Curl</li>
-          <li>볼륨 래쉬 Volume Lash</li>
-          <li>C컬 / D컬 C-Curl / D-Curl</li>
-          <li>속눈썹 영양 케어 Lash Nutrition</li>
-        </ul>
+      <div class="hero-contact-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+12125550190">(847) 962-7633</a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ ABOUT ═══ -->
-<section class="section" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-image-frame reveal">
-        <div class="about-image-placeholder">
-          <div class="about-image-placeholder-icon">📸</div>
-          <div class="about-image-placeholder-text">
-            사진을 추가하세요<br>
-            <span style="font-size:0.75rem">Add your photo here</span>
-          </div>
-        </div>
-      </div>
-      <div class="about-text reveal">
-        <div class="section-label">About · 소개</div>
-        <h2 class="section-title">정성을 담은 시술</h2>
-        <p class="section-desc">
-          한스 스킨케어는 Northbrook 지역에서 피부 관리와 반영구 메이크업
-          전문 서비스를 제공하고 있습니다. 오랜 경험과 섬세한 손길로
-          고객님의 자연스러운 아름다움을 완성합니다.
-        </p>
-        <div class="about-quote">
-          "한 분 한 분 정성을 다해 시술합니다.<br>
-          고객님의 만족이 저의 보람입니다."
-        </div>
-        <div class="about-stats">
-          <div>
-            <div class="about-stat-num">10+</div>
-            <div class="about-stat-label">경력 Years</div>
-          </div>
-          <div>
-            <div class="about-stat-num">500+</div>
-            <div class="about-stat-label">고객 Clients</div>
-          </div>
-          <div>
-            <div class="about-stat-num">2,000+</div>
-            <div class="about-stat-label">시술 Sessions</div>
-          </div>
-        </div>
-      </div>
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn">Book Your Visit · 예약하기</a>
+      <a href="#" class="btn btn-kakao">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" stroke="none"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.21 4.65 6.6-.15.53-.96 3.4-.99 3.63 0 0-.02.17.09.24.11.06.24.01.24.01.31-.04 3.66-2.4 4.24-2.81.57.08 1.16.13 1.77.13 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>
+        KakaoTalk · 카카오톡
+      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ GALLERY ═══ -->
-<section class="section gallery-bg" id="gallery">
-  <div class="section-inner">
-    <div class="section-header center reveal">
-      <div class="section-label">Gallery · 갤러리</div>
-      <h2 class="section-title">Our Work</h2>
-      <p class="section-desc">
-        실제 시술 결과를 확인해보세요.<br>
-        자연스럽고 아름다운 변화를 경험하실 수 있습니다.
-      </p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item reveal">
-        <div class="gallery-image rose-bg">
-          <span>🧖</span>
-          <div class="gallery-ba-badge">Before &amp; After</div>
-        </div>
-        <div class="gallery-caption">
-          <div class="gallery-caption-title">수분 케어 결과</div>
-          <div class="gallery-caption-sub">Hydration Treatment · 4주 후</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-image gold-bg">
-          <span>✏️</span>
-          <div class="gallery-ba-badge">Before &amp; After</div>
-        </div>
-        <div class="gallery-caption">
-          <div class="gallery-caption-title">엠보 눈썹</div>
-          <div class="gallery-caption-sub">Eyebrow Embroidery · 터치업 후</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-image green-bg">
-          <span>👁️</span>
-          <div class="gallery-ba-badge">Before &amp; After</div>
-        </div>
-        <div class="gallery-caption">
-          <div class="gallery-caption-title">볼륨 래쉬</div>
-          <div class="gallery-caption-sub">Volume Lash Perm</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-image gold-bg">
-          <span>💋</span>
-          <div class="gallery-ba-badge">Before &amp; After</div>
-        </div>
-        <div class="gallery-caption">
-          <div class="gallery-caption-title">입술 라인</div>
-          <div class="gallery-caption-sub">Lip Blush · 로즈 핑크</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-image rose-bg">
-          <span>✨</span>
-          <div class="gallery-ba-badge">Before &amp; After</div>
-        </div>
-        <div class="gallery-caption">
-          <div class="gallery-caption-title">리프팅 케어</div>
-          <div class="gallery-caption-sub">Lifting Treatment · 8주 프로그램</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-image green-bg">
-          <span>🌿</span>
-        </div>
-        <div class="gallery-caption">
-          <div class="gallery-caption-title">진정 케어</div>
-          <div class="gallery-caption-sub">Calming Facial · 민감성 피부</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══ PROCESS ═══ -->
-<section class="section process-bg">
-  <div class="section-inner">
-    <div class="section-header center reveal">
-      <div class="section-label">Process · 시술 과정</div>
-      <h2 class="section-title">첫 방문 안내</h2>
-      <p class="section-desc">
-        편안하고 체계적인 상담부터 시술, 사후 관리까지<br>
-        안심하고 맡겨주세요.
-      </p>
-    </div>
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="process-num">1</div>
-        <div class="process-step-title">상담 예약</div>
-        <div class="process-step-desc">
-          전화 또는 카카오톡으로<br>
-          편하게 상담 예약하세요
-        </div>
-      </div>
-      <div class="process-step reveal">
-        <div class="process-num">2</div>
-        <div class="process-step-title">피부 분석</div>
-        <div class="process-step-desc">
-          피부 상태를 꼼꼼히 분석하고<br>
-          맞춤 시술 계획을 세웁니다
-        </div>
-      </div>
-      <div class="process-step reveal">
-        <div class="process-num">3</div>
-        <div class="process-step-title">전문 시술</div>
-        <div class="process-step-desc">
-          안전하고 섬세한 시술로<br>
-          최상의 결과를 만듭니다
-        </div>
-      </div>
-      <div class="process-step reveal">
-        <div class="process-num">4</div>
-        <div class="process-step-title">사후 관리</div>
-        <div class="process-step-desc">
-          시술 후 관리법 안내와<br>
-          정기 체크업을 진행합니다
-        </div>
-      </div>
-    </div>
+  <!-- ====== PETAL DIVIDER ====== -->
+  <div class="petal-divider">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="20" rx="12" ry="18" fill="#E8A99A" transform="rotate(-30,20,20)"/>
+      <ellipse cx="40" cy="20" rx="10" ry="16" fill="#F2CFC5" transform="rotate(10,40,20)"/>
+      <ellipse cx="60" cy="20" rx="8" ry="14" fill="#D4847A" transform="rotate(-15,60,20)"/>
+      <ellipse cx="80" cy="20" rx="10" ry="16" fill="#F2CFC5" transform="rotate(20,80,20)"/>
+      <ellipse cx="100" cy="20" rx="12" ry="18" fill="#E8A99A" transform="rotate(30,100,20)"/>
+    </svg>
   </div>
-</section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
-<section class="section testimonial-bg">
-  <div class="section-inner">
-    <div class="section-header center reveal">
-      <div class="section-label">Reviews · 후기</div>
-      <h2 class="section-title">고객 후기</h2>
-      <p class="section-desc">
-        실제 고객님들의 솔직한 후기를 확인해보세요.
-      </p>
-    </div>
-    <div class="testimonials">
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-text">
-          눈썹 반영구 받았는데 정말 자연스러워요!
-          친구들이 타고났냐고 물어볼 정도예요.
-          선생님이 꼼꼼하게 상담해주셔서 안심하고 받았습니다.
-        </div>
-        <div class="testimonial-author">김○은</div>
-        <div class="testimonial-author-sub">눈썹 엠보 · Eyebrow Embroidery</div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-text">
-          피부 관리 패키지 받고 있는데 매번 갈 때마다 피부가 좋아지는 게 느껴져요.
-          위생적이고 분위기도 편안해서 단골 되었어요.
-        </div>
-        <div class="testimonial-author">이○진</div>
-        <div class="testimonial-author-sub">얼굴 관리 10회 · Facial Package</div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-text">
-          속눈썹 펌 결과가 너무 만족스러워요.
-          C컬로 했는데 눈이 훨씬 커 보여요!
-          다음 달에도 예약했습니다.
-        </div>
-        <div class="testimonial-author">정○늘</div>
-        <div class="testimonial-author-sub">속눈썹 펌 · Lash Perm</div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-text">
-          입술 반영구 색상이 정말 자연스러워요.
-          한국에서 받던 것과 퀄리티가 같아서 놀랐어요.
-          Northbrook에 이런 곳이 있어서 감사해요!
-        </div>
-        <div class="testimonial-author">박○지</div>
-        <div class="testimonial-author-sub">입술 라인 · Lip Blush</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══ CONTACT ═══ -->
-<section class="section" id="contact">
-  <div class="section-inner">
-    <div class="section-header center reveal">
-      <div class="section-label">Contact · 연락처</div>
-      <h2 class="section-title">방문 안내</h2>
-      <p class="section-desc">
-        편하게 연락주시면 친절하게 안내해드리겠습니다.
-      </p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info-card reveal">
-        <div class="contact-info-row">
-          <div class="contact-info-icon">📍</div>
-          <div>
-            <div class="contact-info-label">Location · 위치</div>
-            <div class="contact-info-value">
-              123 Main Street<br>
-              Northbrook, IL 60062
+  <!-- ====== SERVICES ====== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-head reveal">
+        <p class="label">Services · 서비스</p>
+        <h2 class="heading">What We <em>Offer</em></h2>
+        <p class="heading-kr">정성을 담은 케어</p>
+        <p class="subtext">Each treatment is thoughtfully designed to bring out your skin's natural radiance.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="svc reveal">
+          <div class="svc-photo">
+            <img src="images/facial-2.jpg" alt="Facial treatment">
+            <div class="svc-photo-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add Photo · 사진</span>
             </div>
           </div>
+          <div class="svc-body">
+            <h3>Facials</h3>
+            <p class="svc-kr">페이셜 케어</p>
+            <p>Custom facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.</p>
+          </div>
         </div>
-        <div class="contact-info-row">
-          <div class="contact-info-icon">📞</div>
-          <div>
-            <div class="contact-info-label">Phone · 전화</div>
-            <div class="contact-info-value">
-              <a href="tel:+18471234567" style="color:var(--rose-dark);font-weight:500">(847) 123-4567</a>
+
+        <div class="svc reveal">
+          <div class="svc-photo">
+           <img src="images/eyebrow-1.jpg" alt="Semi-permanent makeup">
+            <div class="svc-photo-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add Photo · 사진</span>
             </div>
           </div>
-        </div>
-        <div class="contact-info-row">
-          <div class="contact-info-icon">💬</div>
-          <div>
-            <div class="contact-info-label">KakaoTalk · 카카오톡</div>
-            <div class="contact-info-value">hansskincare</div>
+          <div class="svc-body">
+            <h3>Semi-Permanent Makeup</h3>
+            <p class="svc-kr">반영구 화장</p>
+            <p>Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.</p>
           </div>
         </div>
-        <div class="contact-info-row">
-          <div class="contact-info-icon">🕐</div>
-          <div>
-            <div class="contact-info-label">Hours · 영업시간</div>
-            <div class="contact-info-value">
-              화–금 Tue–Fri: 10:00 AM – 7:00 PM<br>
-              토 Sat: 10:00 AM – 5:00 PM<br>
-              일·월 Sun–Mon: 휴무 Closed
+
+        <div class="svc reveal">
+          <div class="svc-photo">
+            <img src="images/eyelash-1.jpg" alt="Eyelash perm">
+            <div class="svc-photo-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add Photo · 사진</span>
             </div>
           </div>
-        </div>
-        <div class="contact-info-row">
-          <div class="contact-info-icon">📸</div>
-          <div>
-            <div class="contact-info-label">Instagram</div>
-            <div class="contact-info-value">
-              <span style="color:var(--rose-dark);font-weight:500">@hans.skincare</span>
-            </div>
+          <div class="svc-body">
+            <h3>Eyelash Perms</h3>
+            <p class="svc-kr">속눈썹 펌</p>
+            <p>Beautifully lifted and curled lashes that open up your eyes and give you a naturally wide-awake, polished look — no extensions needed.</p>
           </div>
         </div>
-      </div>
-      <div class="contact-map reveal">
-        <div class="contact-map-icon">🗺️</div>
-        <div class="contact-map-text">
-          Google Maps<br>
-          <span style="font-size:0.75rem">지도를 보려면 아래 버튼을 클릭하세요</span>
-        </div>
-        <a href="https://maps.google.com" target="_blank" class="contact-map-btn">
-          지도 열기 Open Map
-        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ CTA ═══ -->
-<section class="section cta-section">
-  <div class="section-inner">
-    <div class="cta-banner reveal">
-      <h2 class="section-title">지금 예약하세요</h2>
-      <p class="section-desc">
-        첫 방문 상담은 무료입니다. 편하게 연락주세요.<br>
-        Free consultation for first-time visitors.
-      </p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-        <a href="tel:+18471234567" class="btn btn-primary">📞 전화 예약 Call Now</a>
-        <a href="javascript:void(0)" class="btn btn-outline">💬 카카오톡 KakaoTalk</a>
+
+  <div class="petal-divider">
+    <svg width="80" height="32" viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(-20,20,16)"/>
+      <ellipse cx="40" cy="16" rx="8" ry="12" fill="#E8A99A" transform="rotate(0,40,16)"/>
+      <ellipse cx="60" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(20,60,16)"/>
+    </svg>
+  </div>
+
+
+  <!-- ====== ABOUT ====== -->
+  <section class="about" id="about">
+    <div class="about-bg-circle"></div>
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img reveal">
+          <img src="images/facial-1.jpg" alt="Han's Skin Care studio">
+          <div class="about-img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Your Photo · 사진</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="label">About · 소개</p>
+          <h2 class="heading">Rooted in Care,<br>Guided by <em>Nature</em></h2>
+          <p class="heading-kr">자연에서 찾은 정성스러운 케어</p>
+          <p>Han's Skin Care was founded with a simple belief: that beautiful skin comes from thoughtful, consistent care — not quick fixes. We combine trusted Korean skincare traditions with modern techniques to give every client a personalized experience.</p>
+          <p>Our studio is a calm, welcoming space where you can truly relax while our licensed estheticians take care of the rest.</p>
+          <div class="badges">
+            <span class="badge">Vegan Friendly</span>
+            <span class="badge">Cruelty Free</span>
+            <span class="badge">K-Beauty</span>
+            <span class="badge">All Skin Types</span>
+          </div>
+          <p class="about-sig">— Han's Skin Care Team</p>
+          <p class="about-sig-kr">한's 스킨케어 팀</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">Han's Skincare · 한스 스킨케어</div>
+
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-head reveal">
+        <p class="label">Testimonials · 고객 후기</p>
+        <h2 class="heading">What Our<br>Clients <em>Say</em></h2>
+        <p class="heading-kr">소중한 말씀</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review reveal">
+          <p class="review-stars">★ ★ ★ ★ ★</p>
+          <p class="review-quote-mark">"</p>
+          <blockquote>My skin has never looked this good. Han's team really listens to what your skin needs and tailors every step. I look forward to my appointments every month.</blockquote>
+          <p class="review-who">— Olivia M.</p>
+        </div>
+        <div class="review reveal">
+          <p class="review-stars">★ ★ ★ ★ ★</p>
+          <p class="review-quote-mark">"</p>
+          <blockquote>The brightening facial completely transformed my complexion. I get compliments all the time now. So grateful I found this studio!</blockquote>
+          <p class="review-who">— 지영 P.</p>
+        </div>
+        <div class="review reveal">
+          <p class="review-stars">★ ★ ★ ★ ★</p>
+          <p class="review-quote-mark">"</p>
+          <blockquote>Calm, clean, and absolutely beautiful space. The team is incredibly skilled and makes you feel right at home. Best skincare experience in the area.</blockquote>
+          <p class="review-who">— Danielle R.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="petal-divider">
+    <svg width="80" height="32" viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(-20,20,16)"/>
+      <ellipse cx="40" cy="16" rx="8" ry="12" fill="#E8A99A" transform="rotate(0,40,16)"/>
+      <ellipse cx="60" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(20,60,16)"/>
+    </svg>
+  </div>
+
+
+  <!-- ====== CONTACT ====== -->
+  <section class="contact" id="contact">
+    <div class="contact-bg-shape"></div>
+    <div class="container">
+      <div class="contact-head reveal">
+        <p class="label">Contact · 연락처</p>
+        <h2 class="heading">Come <em>Visit</em> Us</h2>
+        <p class="heading-kr">방문 안내</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3>Visit Us</h3>
+          <p class="cb-kr">오시는 길</p>
+          <address>5001 Newport Drive<br>Suite 2<br>Rolling Meadows, IL 60008</address>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <h3>Get in Touch</h3>
+          <p class="cb-kr">연락하기</p>
+          <p>
+            <a href="tel:+12125550190">(847) 962-7633</a><br>
+            <a href="mailto:hello@hansskincare.com">hello@hansskincare.com</a><br>
+            <a href="#">KakaoTalk · 카카오톡</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="footer-logo-en">Han's Skin Care</span>
+      <span class="footer-logo-kr">한's 스킨케어</span>
+    </div>
     <div class="footer-links">
-      <a href="javascript:void(0)" onclick="scrollTo_('services')" class="footer-link">서비스</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('about')" class="footer-link">소개</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('gallery')" class="footer-link">갤러리</a>
-      <a href="javascript:void(0)" onclick="scrollTo_('contact')" class="footer-link">연락처</a>
+      <a href="#">Instagram</a>
+      <a href="#">KakaoTalk</a>
     </div>
-    <div class="footer-copy">
-      © 2026 Han's Skincare. All rights reserved. · 한스 스킨케어
-    </div>
-  </div>
-</footer>
+    <p class="footer-copy">&copy; 2026 Han's Skin Care · 한's 스킨케어. All rights reserved.</p>
+  </footer>
 
-<!-- ═══ SCRIPTS ═══ -->
-<script>
-// Smooth scroll to section
-function scrollTo_(id) {
-  const el = document.getElementById(id);
-  if (!el) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-  const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
-  const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
-  window.scrollTo({ top: y, behavior: 'smooth' });
-}
 
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// Mobile menu
-function toggleMenu() {
-  const toggle = document.getElementById('nav-toggle');
-  const menu = document.getElementById('mobile-menu');
-  toggle.classList.toggle('open');
-  menu.classList.toggle('open');
-  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-}
-function closeMenu() {
-  document.getElementById('nav-toggle').classList.remove('open');
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
-</script>
+  <!-- ====== Scroll reveal ====== -->
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
