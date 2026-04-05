@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Han's Skin Care · 한's 스킨케어</title>
 
-  <!-- Fonts: Playfair Display (elegant display) + DM Sans (clean body) + Noto Serif KR (Korean) -->
+  <!-- Fonts: Cormorant Garamond (elegant display) + Jost (clean body) + Noto Serif KR (Korean) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     /* =============================================================
        HAN'S SKIN CARE
@@ -24,14 +25,17 @@
       --blush-deep:  #E8A99A;
       --rose:        #D4847A;
       --rose-dark:   #B8655B;
-      --text:        #3A2F2D;
-      --text-muted:  #8C7B77;
-      --text-light:  #B5A5A0;
+      --text:        #2A1F1D;
+      --text-muted:  #5C4D49;
+      --text-light:  #7A6A66;
       --border:      #F0E0DA;
 
-      --font-display: 'Playfair Display', 'Georgia', serif;
-      --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
-      --font-kr:      'Noto Serif KR', serif;
+      --font-display: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body:    'Jost', 'Helvetica Neue', sans-serif;
+      --font-kr:      'Gowun Batang', serif;
+      /*--font-kr:      'Nanum Myeongjo', serif;*/
+      /*--font-kr:      'Noto Serif KR', serif;*/
+      
 
       --max-width: 1200px;
       --section-pad: 120px 24px;
@@ -43,7 +47,7 @@
     body {
       font-family: var(--font-body);
       font-weight: 400;
-      font-size: 17px;
+      font-size: 19px;
       line-height: 1.75;
       color: var(--text);
       background: var(--white);
@@ -73,7 +77,7 @@
       color: var(--text-muted); margin-bottom: 24px;
     }
     .subtext {
-      font-size: 18px; color: var(--text-muted);
+      font-size: 20px; color: var(--text-muted);
       max-width: 540px; line-height: 1.85;
     }
 
@@ -641,12 +645,12 @@
         <span class="nav-logo-kr">한's 스킨케어</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services">Services • 서비스</a></li>
+        <li><a href="#about">About • 소개</a></li>
+        <li><a href="#reviews">Reviews • 리뷰</a></li>
+        <li><a href="#contact">Contact • 연락처</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Book Now</a>
+      <a href="#contact" class="nav-cta">Book Now • 예약하기</a>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -655,7 +659,7 @@
   <!-- ====== HERO ====== -->
   <section class="hero">
     <!-- ↓ Replace your-photo.jpg with your image filename or URL -->
-    <div class="hero-bg-photo" style="background-image: url('your-photo.jpg')"></div>
+    <div class="hero-bg-photo" style="background-image: url('images/main-banner.jpg')"></div>
 
     <!-- Decorative bloom SVG -->
     <svg class="hero-bloom" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
@@ -728,10 +732,6 @@
         <div class="svc reveal">
           <div class="svc-photo">
             <img src="images/facial-2.jpg" alt="Facial treatment">
-            <div class="svc-photo-placeholder">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span>Add Photo · 사진</span>
-            </div>
           </div>
           <div class="svc-body">
             <h3>Facials</h3>
@@ -743,10 +743,6 @@
         <div class="svc reveal">
           <div class="svc-photo">
            <img src="images/eyebrow-1.jpg" alt="Semi-permanent makeup">
-            <div class="svc-photo-placeholder">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span>Add Photo · 사진</span>
-            </div>
           </div>
           <div class="svc-body">
             <h3>Semi-Permanent Makeup</h3>
@@ -758,10 +754,6 @@
         <div class="svc reveal">
           <div class="svc-photo">
             <img src="images/eyelash-1.jpg" alt="Eyelash perm">
-            <div class="svc-photo-placeholder">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span>Add Photo · 사진</span>
-            </div>
           </div>
           <div class="svc-body">
             <h3>Eyelash Perms</h3>
@@ -802,8 +794,9 @@
           <p>Han's Skin Care was founded with a simple belief: that beautiful skin comes from thoughtful, consistent care — not quick fixes. We combine trusted Korean skincare traditions with modern techniques to give every client a personalized experience.</p>
           <p>Our studio is a calm, welcoming space where you can truly relax while our licensed estheticians take care of the rest.</p>
           <div class="badges">
-            <span class="badge">Vegan Friendly</span>
-            <span class="badge">Cruelty Free</span>
+            <span class="badge">Semi-Permanent Makeup</span>
+            <span class="badge">Rejuvenating Facial</span>
+            <span class="badge">Eyelash Perm</span>
             <span class="badge">K-Beauty</span>
             <span class="badge">All Skin Types</span>
           </div>
