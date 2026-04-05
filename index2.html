@@ -676,6 +676,29 @@
       line-height: 1.9;
     }
 
+    /* Menu list inside modal (used when a service has sub-items) */
+    .modal-menu { list-style: none; margin-top: 4px; }
+    .modal-menu li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-menu li:last-child { border-bottom: none; }
+    .modal-menu-name {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 20px; color: var(--text); margin-bottom: 2px;
+    }
+    .modal-menu-name-kr {
+      font-family: var(--font-kr); font-weight: 400;
+      font-size: 14px; color: var(--text-light); margin-bottom: 6px;
+    }
+    .modal-menu-time {
+      font-family: var(--font-kr); font-weight: 300;
+      font-size: 16px; color: var(--text); margin-bottom: 2px;
+    }
+    .modal-menu-desc {
+      font-size: 14px; color: var(--text-muted); line-height: 1.75;
+    }
+
     .modal-close {
       position: absolute; top: 16px; right: 16px;
       width: 40px; height: 40px;
@@ -822,42 +845,8 @@
         <p class="subtext">Each treatment is thoughtfully designed to bring out your skin's natural radiance.</p>
       </div>
 
-      <div class="services-grid">
-        <div class="svc reveal" data-modal="facial">
-          <div class="svc-photo">
-            <img src="images/facial-2.jpg" alt="Facial treatment">
-          </div>
-          <div class="svc-body">
-            <h3>Facials</h3>
-            <p class="svc-kr">페이셜 케어</p>
-            <p>Custom facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.</p>
-            <span class="svc-more">Learn More · 자세히</span>
-          </div>
-        </div>
-
-        <div class="svc reveal" data-modal="makeup">
-          <div class="svc-photo">
-           <img src="images/eyebrow-1.jpg" alt="Semi-permanent makeup">
-          </div>
-          <div class="svc-body">
-            <h3>Semi-Permanent Makeup</h3>
-            <p class="svc-kr">반영구 화장</p>
-            <p>Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.</p>
-            <span class="svc-more">Learn More · 자세히</span>
-          </div>
-        </div>
-
-        <div class="svc reveal" data-modal="lash">
-          <div class="svc-photo">
-            <img src="images/eyelash-1.jpg" alt="Eyelash perm">
-          </div>
-          <div class="svc-body">
-            <h3>Eyelash Perms</h3>
-            <p class="svc-kr">속눈썹 펌</p>
-            <p>Beautifully lifted and curled lashes that open up your eyes and give you a naturally wide-awake, polished look — no extensions needed.</p>
-            <span class="svc-more">Learn More · 자세히</span>
-          </div>
-        </div>
+      <div class="services-grid" id="services-grid">
+        <!-- Cards are rendered by the SERVICES array in the script below -->
       </div>
     </div>
   </section>
@@ -1026,30 +1015,142 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    /* ── Service modal data ── */
-    const serviceData = {
-      facial: {
-        title: 'Facials',
+    /* ══════════════════════════════════════════════════════════════
+       SERVICES — edit this array to add, remove, or update services.
+       Each entry controls the card in the grid AND the pop-up modal.
+
+       Fields:
+         key     – unique ID (used internally; no spaces)
+         title   – English title shown on the card and modal
+         titleKr – Korean title shown on the card and modal
+         img     – image path for both the card thumbnail and modal
+         imgAlt  – alt text for the image
+         summary – short description shown on the card
+         desc    – longer description shown in the modal (English)
+         descKr  – longer description shown in the modal (Korean)
+    ══════════════════════════════════════════════════════════════ */
+    const SERVICES = [
+      {
+        key:     'facial',
+        title:   'Facials',
         titleKr: '페이셜 케어',
-        img: 'images/facial-2.jpg',
-        desc: 'Our customized facials begin with a thorough skin analysis, followed by deep cleansing, gentle exfoliation, and targeted treatments using premium botanical products. Each session is tailored to your skin type and concerns — whether you need hydration, brightening, anti-aging, or pore care. You\'ll leave with a refreshed, glowing complexion.',
-        descKr: '맞춤형 페이셜은 철저한 피부 분석으로 시작하여 딥 클렌징, 부드러운 각질 제거, 프리미엄 보태니컬 제품을 사용한 집중 트리트먼트로 이어집니다. 수분 공급, 브라이트닝, 안티에이징, 모공 케어 등 피부 타입과 고민에 맞춰 진행됩니다. 빛나는 피부로 돌아가세요.'
+        img:     'images/facial-2.jpg',
+        imgAlt:  'Facial treatment',
+        summary: 'Custom facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.',
+        // Use `menu` to list individual treatments in the pop-up.
+        // Each item: { name, nameKr, desc }
+        menu: [
+          {
+            name:   'Essential Facial',
+            nameKr: '에센셜 페이셜',
+            time:   '80 mins',
+            desc:   'A foundational treatment including cleansing, exfoliation, and basic hydration — perfect for first-time visitors or maintenance care.',
+          },
+          {
+            name:   'Personalized Facial',
+            nameKr: '맞춤형 페이셜',
+            time:   '90 mins', 
+            desc:   'A fully customized session tailored to your skin type and concerns. Includes a thorough skin analysis before treatment begins.',
+          },
+          {
+            name:   'Advanced Facial',
+            nameKr: '어드밴스드 페이셜',
+            time:   '110 mins',
+            desc:   'A deep-treatment facial targeting anti-aging, brightening, or pore care using professional-grade serums and techniques.',
+          },
+          {
+            name:   'Premium Care',
+            nameKr: '프리미엄 케어',
+            time:   '120 mins',
+            desc:   'A deep-treatment facial targeting anti-aging, brightening, or pore care using professional-grade serums and techniques.',
+          },
+          {
+            name:   'HIFU V Life Face Treatment',
+            nameKr: '울쎄라 페이셜',
+            time:   '110 mins',
+            desc:   'A deep-treatment facial targeting anti-aging, brightening, or pore care using professional-grade serums and techniques.',
+          },
+          {
+            name:   'Local Dynamic Micro Massage Lifting',
+            nameKr: 'LDM 물방울 리프팅',
+            time:   '90 mins',
+            desc:   'A deep-treatment facial targeting anti-aging, brightening, or pore care using professional-grade serums and techniques.',
+          },
+        ],
       },
-      makeup: {
-        title: 'Semi-Permanent Makeup',
+      {
+        key:     'makeup',
+        title:   'Semi-Permanent Makeup',
         titleKr: '반영구 화장',
-        img: 'images/eyebrow-1.jpg',
-        desc: 'Enhance your natural beauty with our semi-permanent makeup services. We offer expertly applied eye liner, eyebrow shaping and filling, and lip color treatments. Using the latest techniques and premium pigments, we create soft, natural-looking results that save you time every morning. Touch-ups are recommended every 1–2 years to maintain your look.',
-        descKr: '반영구 화장으로 자연스러운 아름다움을 더하세요. 아이라인, 눈썹 디자인 및 채움, 입술 색상 시술을 전문적으로 제공합니다. 최신 기법과 프리미엄 색소를 사용하여 부드럽고 자연스러운 결과를 만들어 드립니다. 1~2년마다 리터치를 권장합니다.'
+        img:     'images/eyebrow-1.jpg',
+        imgAlt:  'Semi-permanent makeup',
+        summary: 'Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.',
+        menu: [
+          {
+            name:   'Eyebrow',
+            nameKr: '눈썹',
+            desc:   'Expertly shaped to complement your facial structure. This treatment fills in sparse areas and defines your natural arches for a polished, smudge-proof look.',
+          },
+          {
+            name:   'Eyeliner',
+            nameKr: '아이라인',
+            desc:   'Subtle pigment applied directly along the lash line. This creates the illusion of thicker lashes and naturally defines your eyes without the hassle of daily makeup.',
+          },
+          {
+            name:   'Lip',
+            nameKr: '입술',
+            desc:   'A custom-blended tint that restores natural color and softly defines the lip border. It corrects asymmetry and leaves your lips with a healthy, long-lasting flush.',
+          },
+        ],
       },
-      lash: {
-        title: 'Eyelash Perms',
-        titleKr: '속눈썹 펌',
-        img: 'images/eyelash-1.jpg',
-        desc: 'Our eyelash perm gives your natural lashes a beautiful, lasting curl that opens up your eyes without the need for daily curling or extensions. The gentle process takes about 45–60 minutes and results last 6–8 weeks. Perfect for those who want a naturally polished, wide-awake look every day.',
-        descKr: '속눈썹 펌은 매일 뷰러나 연장 없이도 눈매를 환하게 열어주는 아름다운 컬을 만들어 드립니다. 부드러운 시술 과정은 약 45~60분 소요되며, 효과는 6~8주간 지속됩니다. 매일 자연스럽고 또렷한 눈매를 원하시는 분께 완벽합니다.'
-      }
-    };
+      {
+        key:     'lash',
+        title:   'Eyelash Services',
+        titleKr: '속눈썹 서비스',
+        img:     'images/eyelash-1.jpg',
+        imgAlt:  'Eyelash perm',
+        summary: 'Beautifully lifted and curled lashes that open up your eyes and give you a naturally wide-awake, polished look — no extensions needed. Or tint for added depth and drama.',
+        menu: [
+          {
+            name:   'Classic Lash lift',
+            nameKr: '클래식 속눈썹 리프팅',
+            desc:   'A semi-permanent treatment that beautifully curls and lifts your natural lashes from base to tip. It instantly opens up your eyes for a brighter, more awakened look without the daily need for a lash curler.',
+          },
+          {
+            name:   'Eyelash Tint',
+            nameKr: '속눈썹 염색',
+            desc:   'A gentle, custom dye applied to your natural lashes to visibly darken and enhance them. It creates the effortless appearance of wearing mascara while remaining completely smudge-proof.',
+          },
+          {
+            name:   'Eyebrow Tint',
+            nameKr: '눈썹 염색',
+            desc:   'A semi-permanent color applied to your brows to enhance their natural shape and thickness. It darkens even the finest hairs, creating a fuller, more defined look that perfectly frames your face.',
+          },
+          
+        ],
+      },
+      // ── To add a new service, copy one block above and change the fields. ──
+    ];
+
+    /* Build a key → entry lookup for the modal, and render the grid cards */
+    const serviceData = {};
+    const grid = document.getElementById('services-grid');
+    SERVICES.forEach(s => {
+      serviceData[s.key] = s;
+      const card = document.createElement('div');
+      card.className = 'svc reveal';
+      card.dataset.modal = s.key;
+      card.innerHTML =
+        '<div class="svc-photo"><img src="' + s.img + '" alt="' + s.imgAlt + '"></div>' +
+        '<div class="svc-body">' +
+          '<h3>' + s.title + '</h3>' +
+          '<p class="svc-kr">' + s.titleKr + '</p>' +
+          '<p>' + s.summary + '</p>' +
+          '<span class="svc-more">Learn More · 자세히</span>' +
+        '</div>';
+      grid.appendChild(card);
+      obs.observe(card);
+    });
 
     /* ── Modal logic ── */
     const overlay = document.getElementById('modal-overlay');
@@ -1065,8 +1166,25 @@
       modalPhoto.innerHTML = '<img src="' + d.img + '" alt="' + d.title + '">';
       modalTitle.textContent = d.title;
       modalTitleKr.textContent = d.titleKr;
-      modalDesc.textContent = d.desc;
-      modalDescKr.textContent = d.descKr;
+      if (d.menu) {
+        // Render a list of sub-treatments
+        modalDesc.innerHTML = '<ul class="modal-menu">' +
+          d.menu.map(item =>
+            '<li>' +
+              '<div style="display: flex; justify-content: space-between; align-items: center;">' +
+                '<p class="modal-menu-name">' + item.name + '</p>' +
+                (item.time ? '<span class="modal-menu-time">' + item.time + '</span>' : '') +
+              '</div>' +
+              (item.nameKr ? '<p class="modal-menu-name-kr">' + item.nameKr + '</p>' : '') +
+              (item.desc   ? '<p class="modal-menu-desc">'    + item.desc   + '</p>' : '') +
+            '</li>'
+          ).join('') +
+        '</ul>';
+        modalDescKr.textContent = '';
+      } else {
+        modalDesc.textContent = d.desc;
+        modalDescKr.textContent = d.descKr || '';
+      }
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
