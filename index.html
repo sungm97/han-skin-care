@@ -4,11 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Han's Skin Care · 한스 스킨케어</title>
+  <meta name="description" content="Han's Skin Care (한스 스킨케어) in Rolling Meadows, IL — Korean skincare facials (피부관리), semi-permanent makeup (반영구 화장: eyebrow, eyeliner, lip), and eyelash services (속눈썹 펌). 롤링메도우스 한인 피부관리. Book your visit today.">
+
+  <!-- Favicon (inline SVG — petal shape in brand rose) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='14' rx='10' ry='14' fill='%23D4847A'/%3E%3C/svg%3E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Han's Skin Care · 한스 스킨케어">
+  <meta property="og:description" content="롤링메도우스 한인 피부관리 · Korean skincare facials, semi-permanent makeup, and eyelash services in Rolling Meadows, IL.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:url" content="">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Structured Data — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Han's Skin Care",
+    "alternateName": "한스 스킨케어",
+    "url": "",
+    "telephone": "+1-847-962-7633",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5001 Newport Drive, Floor 2",
+      "addressLocality": "Rolling Meadows",
+      "addressRegion": "IL",
+      "postalCode": "60008",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.0753,
+      "longitude": -88.0158
+    },
+    "image": "images/og-image.jpg",
+    "description": "Han's Skin Care (한스 스킨케어) — Korean skincare facials (피부관리), semi-permanent makeup (반영구 화장), and eyelash services (속눈썹 펌) in Rolling Meadows, IL. 롤링메도우스 한인 피부관리.",
+    "priceRange": "$$",
+    "areaServed": "Rolling Meadows, IL",
+    "knowsLanguage": ["en", "ko"]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Preload hero banner so it starts downloading immediately -->
+  <link rel="preload" as="image" href="images/main-banner.jpg">
   <style>
     /* =============================================================
        HAN'S SKIN CARE
@@ -34,6 +78,22 @@
       --max-width: 1200px;
       --section-pad: 120px 24px;
     }
+
+    /* ── Skip link (accessibility) ── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 200;
+      padding: 12px 24px;
+      background: var(--rose);
+      color: var(--white);
+      border-radius: 0 0 8px 8px;
+      font-size: 14px; font-weight: 500;
+      text-decoration: none;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
 
     /* ── Reset ── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -284,6 +344,10 @@
     .svc:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 60px rgba(212,132,122,.12);
+    }
+    .svc:focus-visible {
+      outline: 2px solid var(--rose);
+      outline-offset: 4px;
     }
 
     /* Service card photo area */
@@ -570,13 +634,7 @@
     }
     .contact-card a:hover { border-color: var(--rose); }
 
-    .hours {
-      width: 100%; font-size: 15px;
-      color: var(--text-muted); border-collapse: collapse;
-      text-align: left;
-    }
-    .hours td { padding: 6px 0; }
-    .hours td:last-child { text-align: right; }
+    
 
     /* ============================================================
        FOOTER
@@ -734,7 +792,10 @@
 
 <body>
 
-  <nav class="nav">
+  <!-- Skip to main content (accessibility) -->
+  <a href="#services" class="skip-link">Skip to content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <span class="nav-logo-en">Han's Skin Care</span>
@@ -746,7 +807,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Book Now</a>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -944,7 +1005,7 @@
   </section>
 
 
-  <div class="modal-overlay" id="modal-overlay">
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Service details">
     <div class="modal">
       <button class="modal-close" id="modal-close" aria-label="Close">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1097,71 +1158,161 @@
     const grid = document.getElementById('services-grid');
     SERVICES.forEach(s => {
       serviceData[s.key] = s;
+
+      /* ── Build card with safe DOM methods (no innerHTML) ── */
       const card = document.createElement('div');
       card.className = 'svc reveal';
       card.dataset.modal = s.key;
-      card.innerHTML =
-        '<div class="svc-photo"><img src="' + s.img + '" alt="' + s.imgAlt + '"></div>' +
-        '<div class="svc-body">' +
-          '<h3>' + s.title + '</h3>' +
-          '<p>' + s.summary + '</p>' +
-          '<span class="svc-more">Learn More</span>' +
-        '</div>';
+      card.setAttribute('role', 'button');      /* #4 a11y */
+      card.setAttribute('tabindex', '0');        /* #4 a11y */
+      card.setAttribute('aria-label', s.title + ' — Learn More');
+
+      const photoDiv = document.createElement('div');
+      photoDiv.className = 'svc-photo';
+      const img = document.createElement('img');
+      img.src = s.img;
+      img.alt = s.imgAlt;
+      img.loading = 'lazy';                      /* #6 perf */
+      img.decoding = 'async';
+      photoDiv.appendChild(img);
+
+      const body = document.createElement('div');
+      body.className = 'svc-body';
+      const h3 = document.createElement('h3');
+      h3.textContent = s.title;                  /* #3 safe */
+      const p = document.createElement('p');
+      p.textContent = s.summary;                 /* #3 safe */
+      const more = document.createElement('span');
+      more.className = 'svc-more';
+      more.textContent = 'Learn More';
+      body.append(h3, p, more);
+
+      card.append(photoDiv, body);
       grid.appendChild(card);
       obs.observe(card);
     });
 
     /* ── Modal logic ── */
     const overlay = document.getElementById('modal-overlay');
+    const modal   = overlay.querySelector('.modal');
     const modalPhoto = document.getElementById('modal-photo');
     const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc');
+    const modalDesc  = document.getElementById('modal-desc');
+    const modalClose = document.getElementById('modal-close');
+    let lastFocused = null;                      /* #4 focus trap */
 
     function openModal(key) {
       const d = serviceData[key];
       if (!d) return;
-      modalPhoto.innerHTML = '<img src="' + d.img + '" alt="' + d.title + '">';
+
+      /* Photo — safe DOM build */
+      modalPhoto.textContent = '';               /* clear previous */
+      const mImg = document.createElement('img');
+      mImg.src = d.img;
+      mImg.alt = d.title;
+      modalPhoto.appendChild(mImg);
+
       modalTitle.textContent = d.title;
+
+      /* Description / menu — safe DOM build */
+      modalDesc.textContent = '';                /* clear previous */
       if (d.menu) {
-        // Render a list of sub-treatments
-        modalDesc.innerHTML = '<ul class="modal-menu">' +
-          d.menu.map(item =>
-            '<li>' +
-              '<div style="display: flex; justify-content: space-between; align-items: center;">' +
-                '<p class="modal-menu-name">' + item.name + '</p>' +
-                (item.time ? '<span class="modal-menu-time">' + item.time + '</span>' : '') +
-              '</div>' +
-              (item.desc   ? '<p class="modal-menu-desc">'    + item.desc   + '</p>' : '') +
-            '</li>'
-          ).join('') +
-        '</ul>';
+        const ul = document.createElement('ul');
+        ul.className = 'modal-menu';
+        d.menu.forEach(item => {
+          const li = document.createElement('li');
+
+          const row = document.createElement('div');
+          row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;';
+          const name = document.createElement('p');
+          name.className = 'modal-menu-name';
+          name.textContent = item.name;
+          row.appendChild(name);
+          if (item.time) {
+            const time = document.createElement('span');
+            time.className = 'modal-menu-time';
+            time.textContent = item.time;
+            row.appendChild(time);
+          }
+          li.appendChild(row);
+
+          if (item.desc) {
+            const desc = document.createElement('p');
+            desc.className = 'modal-menu-desc';
+            desc.textContent = item.desc;
+            li.appendChild(desc);
+          }
+          ul.appendChild(li);
+        });
+        modalDesc.appendChild(ul);
       } else {
         modalDesc.textContent = d.desc;
       }
+
+      /* Show overlay */
       overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+
+      /* #4 Focus trap — remember trigger, move focus into modal */
+      lastFocused = document.activeElement;
+      modalClose.focus();
     }
 
     function closeModal() {
       overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();      /* #4 restore focus */
     }
 
-    document.querySelectorAll('.svc[data-modal]').forEach(card => {
-      card.addEventListener('click', () => openModal(card.dataset.modal));
+    /* #4 Focus trap — keep Tab cycling inside the modal while open */
+    modal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
-    document.getElementById('modal-close').addEventListener('click', closeModal);
+    /* Card click + keyboard activation (#4) */
+    document.querySelectorAll('.svc[data-modal]').forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.modal));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.modal); }
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-    /* ── Mobile nav toggle ── */
+    /* ── Mobile nav toggle (#9) ── */
     const navEl = document.querySelector('.nav');
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navEl.classList.toggle('open'));
+
+    function setNavOpen(open) {
+      navEl.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));  /* #4 */
+    }
+
+    navToggle.addEventListener('click', () => {
+      setNavOpen(!navEl.classList.contains('open'));
+    });
+
+    /* Close nav when a link is tapped */
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navEl.classList.remove('open'));
+      link.addEventListener('click', () => setNavOpen(false));
+    });
+
+    /* #9 Close nav when clicking outside it */
+    document.addEventListener('click', (e) => {
+      if (navEl.classList.contains('open') && !navEl.contains(e.target)) {
+        setNavOpen(false);
+      }
     });
   </script>
 </body>
