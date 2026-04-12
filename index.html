@@ -913,11 +913,11 @@
           <p>Han's Skin Care was founded with a simple belief: that beautiful skin comes from thoughtful, consistent care — not quick fixes. We combine trusted Korean skincare traditions with modern techniques to give every client a personalized experience.</p>
           <p>Our studio is a calm, welcoming space where you can truly relax while our licensed estheticians take care of the rest.</p>
           <div class="badges">
-            <span class="badge">Semi-Permanent Makeup</span>
-            <span class="badge">Rejuvenating Facial</span>
-            <span class="badge">Eyelash Perm</span>
             <span class="badge">K-Beauty</span>
+            <span class="badge">Rejuvenating Facial</span>
             <span class="badge">All Skin Types</span>
+            <span class="badge">Semi-Permanent Makeup</span>
+            <span class="badge">Eyelash Perm</span>
           </div>
           <p class="about-sig">— Han's Skin Care Team</p>
         </div>
@@ -1004,7 +1004,6 @@
     </div>
   </section>
 
-
   <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Service details">
     <div class="modal">
       <button class="modal-close" id="modal-close" aria-label="Close">
@@ -1015,7 +1014,7 @@
       <div class="modal-photo" id="modal-photo"></div>
       <div class="modal-body">
         <h3 class="modal-title" id="modal-title"></h3>
-        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-desc" id="modal-desc"></div>
       </div>
     </div>
   </div>
@@ -1026,7 +1025,7 @@
       <span class="footer-logo-en">Han's Skin Care</span>
     </div>
     <div class="footer-links">
-      <a href="#">Instagram</a>
+      <a href="tel:+18479627633">Phone</a>
       <a href="#">KakaoTalk</a>
     </div>
     <p class="footer-copy">© 2026 Han's Skin Care. All rights reserved.</p>
@@ -1058,7 +1057,7 @@
         title:   'Facials',
         img:     'images/facial-2.png',
         imgAlt:  'Facial treatment',
-        summary: 'Custom facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.',
+        summary: 'Rejuvenate in our exclusive private rooms. We combine advanced lifting technology with premium botanicals to target wrinkles and firm your skin, finished with a specialized neck massage for a contoured, radiant glow." facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.',
         // Use `menu` to list individual treatments in the pop-up.
         // Each item: { name, time, desc }
         menu: [
@@ -1075,7 +1074,7 @@
           {
             name:   'Premium Care',
             time:   '110 mins',
-            desc:   'A premium deep-treatment facial targeting anti-aging, brightening, or pore care using professional-grade serums and techniques.',
+            desc:   '99.9% certified 24K Gold patch and ampoule helps reduce wrinkle, fine lines, spots and prevents premature aging of the skin',
           },
           {
             name:   'HIFU V Life Face Treatment',
@@ -1102,9 +1101,10 @@
       {
         key:     'makeup',
         title:   'Semi-Permanent Makeup',
-        img:     'images/eyebrow-1.png',
+        img:     'images/eyebrows-2.jpeg',
         imgAlt:  'Semi-permanent makeup',
         summary: 'Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.',
+        desc:    'With years of clinical experience and extensive expertise, we create the perfect shape and natural color tailored to your unique features. We are committed to excellence, ensuring complete professional accountability from the initial procedure to the final touch-up for lasting satisfaction.',
         menu: [
           {
             name:   'Eyebrow',
@@ -1112,7 +1112,7 @@
           },
           {
             name:   'Eyeliner',
-            desc:   'Subtle pigment applied directly along the lash line. This creates the illusion of thicker lashes and naturally defines your eyes without the hassle of daily makeup.',
+            desc:   'Subtle pigment applied directly along the lash line. This creates the illusion of sharp, well defined eyes and thicker lashes without the hassle of daily makeup.',
           },
           {
             name:   'Lip',
@@ -1211,6 +1211,14 @@
 
       /* Description / menu — safe DOM build */
       modalDesc.textContent = '';                /* clear previous */
+
+      if (d.desc) {
+        const descP = document.createElement('p');
+        descP.style.marginBottom = '20px';
+        descP.textContent = d.desc;
+        modalDesc.appendChild(descP);
+      }
+
       if (d.menu) {
         const ul = document.createElement('ul');
         ul.className = 'modal-menu';
@@ -1240,8 +1248,6 @@
           ul.appendChild(li);
         });
         modalDesc.appendChild(ul);
-      } else {
-        modalDesc.textContent = d.desc;
       }
 
       /* Show overlay */
