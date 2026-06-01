@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Han's Skin Care · 한스 스킨케어</title>
+  <meta name="description" content="Han's Skin Care (한스 스킨케어) in Rolling Meadows, IL — Korean skincare facials (피부관리), semi-permanent makeup (반영구 화장: eyebrow, eyeliner, lip), and eyelash service (속눈썹 펌). 롤링메도우스 한인 피부관리. Book your visit today.">
+
+  <!-- Favicon (inline SVG — petal shape in brand rose) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='14' rx='10' ry='14' fill='%23D4847A'/%3E%3C/svg%3E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Han's Skin Care · 한스 스킨케어">
+  <meta property="og:description" content="롤링메도우스 한인 피부관리 · Korean skincare facials, semi-permanent makeup, and eyelash services in Rolling Meadows, IL.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:url" content="">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Structured Data — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Han's Skin Care",
+    "alternateName": "한스 스킨케어",
+    "url": "",
+    "telephone": "+1-847-962-7633",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5001 Newport Drive, Floor 2",
+      "addressLocality": "Rolling Meadows",
+      "addressRegion": "IL",
+      "postalCode": "60008",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.0753,
+      "longitude": -88.0158
+    },
+    "image": "images/og-image.jpg",
+    "description": "Han's Skin Care (한스 스킨케어) — Korean skincare facials (피부관리), semi-permanent makeup (반영구 화장), and eyelash services (속눈썹 펌) in Rolling Meadows, IL. 롤링메도우스 한인 피부관리.",
+    "priceRange": "$$",
+    "areaServed": "Rolling Meadows, IL",
+    "knowsLanguage": ["en", "ko"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Preload hero banner so it starts downloading immediately -->
+  <link rel="preload" as="image" href="images/main-banner.jpg">
+  <style>
+    /* =============================================================
+       HAN'S SKIN CARE
+       White · Blush pink · Soft, graphic-forward
+       ============================================================= */
+
+    :root {
+      --white:       #FFFFFF;
+      --cream:       #FFFBF9;
+      --blush:       #F9E8E3;
+      --blush-mid:   #F2CFC5;
+      --blush-deep:  #E8A99A;
+      --rose:        #D4847A;
+      --rose-dark:   #B8655B;
+      --text:        #2A1F1D;
+      --text-muted:  #5C4D49;
+      --text-light:  #7A6A66;
+      --border:      #F0E0DA;
+
+      --font-display: 'DM Sans', sans-serif;
+      --font-body:    'Jost', 'Helvetica Neue', sans-serif;
+
+      --max-width: 1200px;
+      --section-pad: 120px 24px;
+    }
+
+    /* ── Skip link (accessibility) ── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 200;
+      padding: 12px 24px;
+      background: var(--rose);
+      color: var(--white);
+      border-radius: 0 0 8px 8px;
+      font-size: 14px; font-weight: 500;
+      text-decoration: none;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ── Utility ── */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    .label {
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 18px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--rose);
+      margin-bottom: 16px;
+    }
+    .heading {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(36px, 5.5vw, 60px); line-height: 1.15;
+      color: var(--text); margin-bottom: 24px;
+    }
+    .heading em { font-style: italic; color: var(--rose); }
+    .subtext {
+      font-size: 20px; color: var(--text-muted);
+      max-width: 540px; line-height: 1.85;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(36px);
+      transition: opacity 0.9s cubic-bezier(.22,1,.36,1),
+                  transform 0.9s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── SVG decorative petal (reused) ── */
+    .deco-petal {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.12;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed; inset: 0 0 auto;
+      z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      height: 76px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: baseline; gap: 10px; }
+    .nav-logo-en {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 24px; color: var(--text);
+    }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text-muted); transition: color .3s;
+    }
+    .nav-links a:hover { color: var(--rose); }
+
+    .nav-cta {
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 12px 32px;
+      background: var(--rose); color: var(--white);
+      border: none; border-radius: 40px;
+      transition: background .3s;
+    }
+    .nav-cta:hover { background: var(--rose-dark); }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--text); margin: 6px 0;
+      transition: transform .3s, opacity .3s;
+    }
+
+    /* Mobile nav open state */
+    .nav.open .nav-links {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 76px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .nav.open .nav-links li a {
+      display: block; padding: 14px 24px;
+      font-size: 14px; letter-spacing: 1px;
+    }
+    .nav.open .nav-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      padding: 180px 24px 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+      display: flex; flex-direction: column; align-items: center;
+      min-height: calc(100vh - 76px);
+    }
+
+    .hero-bg-photo {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+    .hero-bg-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,251,249,0.20) 0%, rgba(255,255,255,0.20) 100%);
+    }
+
+    /* Large decorative bloom behind hero */
+    .hero-bloom {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      pointer-events: none;
+      opacity: .25;
+    }
+
+    .hero-label {
+      font-family: var(--font-body); font-weight: 500;
+      font-size: 18px; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--rose);
+      margin-bottom: 28px; position: relative;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(46px, 8vw, 90px); line-height: 1.05;
+      margin-bottom: 32px; position: relative;
+    }
+    .hero h1 em { font-style: italic; color: var(--rose); }
+    
+    .hero-sub {
+      font-size: 23px; color: var(--text-muted);
+      max-width: 500px; margin: 0 auto 48px;
+      line-height: 1.85; position: relative;
+    }
+    .btn {
+      display: inline-block;
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 12px 36px;
+      background: var(--rose); color: var(--white);
+      border-radius: 30px;
+      justify-content: center;
+      min-width: 220px;
+      transition: background .3s, transform .2s;
+      position: relative;
+    }
+    .btn:hover { background: var(--rose-dark); transform: translateY(-2px); }
+
+    .hero-contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;
+      position: relative;
+      width: 100%;
+      margin-top: auto;
+      z-index: 1;
+    }
+    .hero-contact-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 18px; color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .hero-contact-item svg { color: var(--rose); flex-shrink: 0; }
+    .hero-contact-item a { color: var(--rose); border-bottom: 1px solid transparent; transition: border-color .3s; }
+    .hero-contact-item a:hover { border-color: var(--rose); }
+    .hero-contact-item span { text-align: left; line-height: 1.5; }
+
+    .hero-actions {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      position: relative;
+      margin-bottom: 0;
+      margin-top: 48px;
+    }
+    .btn-kakao {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #391B1B; color: #FEE500;
+    }
+    .btn-kakao:hover { background: #2A1010; }
+    .btn-kakao svg { fill: #FEE500; }
+
+    /* ============================================================
+       DECORATIVE PETAL DIVIDER
+    ============================================================ */
+    .petal-divider {
+      display: flex; align-items: center; justify-content: center;
+      padding: 48px 24px;
+    }
+    .petal-divider svg { opacity: .35; }
+
+    /* ============================================================
+       GALLERY STRIP
+    ============================================================ */
+    .gallery-strip {
+      padding: 0 0 72px;
+      overflow: hidden;
+    }
+    .gallery-strip-head {
+      text-align: center;
+      padding: 0 24px 48px;
+    }
+    .gallery-track-wrapper {
+      position: relative;
+    }
+    .gallery-track-wrapper::before,
+    .gallery-track-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .gallery-track-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, var(--cream), transparent);
+    }
+    .gallery-track-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, var(--cream), transparent);
+    }
+    .gallery-track {
+      display: flex;
+      gap: 20px;
+      animation: gallery-scroll 30s linear infinite;
+      width: max-content;
+    }
+    .gallery-track:hover { animation-play-state: paused; }
+    .gallery-item {
+      flex-shrink: 0;
+      width: 280px;
+      height: 360px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(212,132,122,.10);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    @keyframes gallery-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-track { animation: none; overflow-x: auto; }
+    }
+
+        /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services { padding: 30px 24px; }
+    .services-head { text-align: center; margin-bottom: 72px; }
+    .services-head .subtext { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .svc {
+      text-align: center;
+      padding: 0 0 48px;
+      background: var(--cream);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
+      cursor: pointer;
+    }
+    .svc:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(212,132,122,.12);
+    }
+    .svc:focus-visible {
+      outline: 2px solid var(--rose);
+      outline-offset: 4px;
+    }
+
+    /* Service card photo area */
+    .svc-photo {
+      width: 100%; 
+      background: var(--blush);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .svc-photo img {
+      width: 100%; height: auto;
+      display: block;
+    }
+    .svc-photo-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 12px;
+      color: var(--text-light);
+    }
+    .svc-photo-placeholder svg { opacity: .4; }
+    .svc-photo-placeholder span {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      opacity: .5;
+    }
+    .svc-body { padding: 32px 36px 0; }
+
+    .svc h3 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 24px; margin-bottom: 16px;
+    }
+    
+    .svc p:last-child {
+      font-size: 15px; color: var(--text-muted); line-height: 1.8;
+    }
+
+    /* Small decorative corner petal on cards */
+    .svc::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 80px; height: 80px;
+      background: var(--blush-mid);
+      border-radius: 50%;
+      opacity: .15;
+    }
+
+    /* ============================================================
+       PHILOSOPHY / ABOUT
+    ============================================================ */
+    .about {
+      padding: var(--section-pad);
+      background: var(--blush);
+      position: relative; overflow: hidden;
+    }
+    /* Large background circle */
+    .about-bg-circle {
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: var(--blush-mid);
+      opacity: .25;
+      pointer-events: none;
+    }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      position: relative;
+    }
+
+    /* Photo placeholder with rounded corners and overlay */
+    .about-img {
+      aspect-ratio: 4/5;
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      box-shadow: 0 24px 80px rgba(184,101,91,.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      position: absolute; inset: 0;
+    }
+    .about-img-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 14px;
+      color: var(--text-light);
+      z-index: 1;
+    }
+    .about-img-placeholder svg { opacity: .35; }
+    .about-img-placeholder span {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      opacity: .45;
+    }
+    /* Hide placeholder when a real image is present */
+    .about-img img ~ .about-img-placeholder { display: none; }
+
+    .about-text .subtext { max-width: 100%; }
+    .about-text p {
+      font-size: 17px; color: var(--text-muted);
+      line-height: 1.9; margin-bottom: 16px;
+    }
+
+    /* Ingredient badges */
+    .badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 28px;
+    }
+    .badge {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 8px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      color: var(--rose);
+    }
+
+    .about-sig {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 24px; color: var(--rose); margin-top: 32px;
+    }
+    
+    /* ============================================================
+       EXPERIENCE BANNER (full-width graphic section)
+    ============================================================ */
+    .experience {
+      padding: 80px 24px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      background: var(--white);
+    }
+    .experience-inner {
+      max-width: 900px; margin: 0 auto;
+      position: relative;
+    }
+
+    /* Floating decorative shapes */
+    .float-shape {
+      position: absolute; pointer-events: none; opacity: .15;
+      border-radius: 50%;
+    }
+    .float-shape-1 { width: 200px; height: 200px; background: var(--blush-mid); top: -60px; left: -80px; }
+    .float-shape-2 { width: 140px; height: 140px; background: var(--blush); bottom: -40px; right: -60px; }
+    .float-shape-3 { width: 80px; height: 80px; background: var(--blush-deep); top: 20px; right: 40px; }
+
+    .experience h2 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(32px, 5vw, 52px); line-height: 1.2;
+      margin-bottom: 8px; position: relative;
+    }
+    
+    .experience p {
+      font-size: 18px; color: var(--text-muted);
+      max-width: 520px; margin: 0 auto;
+      line-height: 1.85; position: relative;
+    }
+
+    /* Stats row */
+    .stats {
+      display: flex; justify-content: center; gap: 64px;
+      margin-top: 56px; position: relative;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 48px; color: var(--rose);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text-muted); margin-top: 8px;
+    }
+    
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .reviews { padding: var(--section-pad); background: var(--cream); }
+    .reviews-head { text-align: center; margin-bottom: 72px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .review {
+      padding: 44px 40px;
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    /* Pink accent circle top-right */
+    .review::before {
+      content: '';
+      position: absolute;
+      top: -12px; right: 32px;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--blush-mid);
+    }
+
+    /* Large stylized quote */
+    .review-quote-mark {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 64px; color: var(--blush-mid);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .review blockquote {
+      font-size: 16px; font-style: normal;
+      line-height: 1.85; margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    /* Stars */
+    .review-stars { color: var(--rose); font-size: 14px; letter-spacing: 3px; margin-bottom: 16px; }
+
+    .review-who {
+      font-size: 14px; font-weight: 500;
+      color: var(--rose);
+    }
+
+    /* ============================================================
+       CONTACT / HOURS
+    ============================================================ */
+    .contact {
+      padding: var(--section-pad);
+      background: var(--blush);
+      position: relative; overflow: hidden;
+    }
+    .contact-bg-shape {
+      position: absolute;
+      bottom: -150px; left: -150px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: var(--blush-mid);
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    .contact-head { text-align: center; margin-bottom: 64px; position: relative; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; position: relative;
+      max-width: 720px; margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 44px 36px;
+      text-align: center;
+    }
+
+    /* Card icon */
+    .contact-card-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-card-icon svg { width: 24px; height: 24px; stroke: var(--rose); fill: none; stroke-width: 1.5; }
+
+    .contact-card h3 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 22px; margin-bottom: 20px;
+    }
+    
+    .contact-card p,
+    .contact-card address {
+      font-style: normal; font-size: 15px;
+      color: var(--text-muted); line-height: 2;
+    }
+    .contact-card a {
+      color: var(--rose);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+    .contact-card a:hover { border-color: var(--rose); }
+
+    
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      padding: 56px 24px;
+      background: var(--text);
+      text-align: center;
+      color: var(--blush);
+    }
+    .footer-logo { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-bottom: 20px; }
+    .footer-logo-en {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: 22px; color: var(--white);
+    }
+    
+    .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; }
+    .footer-links a {
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blush-mid); transition: color .3s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 12px; color: var(--text-light); }
+
+    /* ============================================================
+       SERVICE MODAL
+    ============================================================ */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      z-index: 200;
+      background: rgba(42,31,29,.45);
+      backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      opacity: 0; visibility: hidden;
+      transition: opacity .35s, visibility .35s;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 24px;
+      max-width: 560px; width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(24px) scale(.97);
+      transition: transform .35s cubic-bezier(.22,1,.36,1);
+      box-shadow: 0 32px 80px rgba(42,31,29,.18);
+    }
+    .modal-overlay.active .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-photo {
+      width: 100%; aspect-ratio: 16/9;
+      background: var(--blush);
+      border-radius: 24px 24px 0 0;
+      overflow: hidden;
+    }
+    .modal-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .modal-body { padding: 40px 40px 44px; }
+
+    .modal-title {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 32px; line-height: 1.2;
+      color: var(--text); margin-bottom: 24px;
+    }
+    
+    .modal-desc {
+      font-size: 16px; color: var(--text-muted);
+      line-height: 1.9; margin-bottom: 16px;
+    }
+    
+    /* Menu list inside modal (used when a service has sub-items) */
+    .modal-menu { list-style: none; margin-top: 4px; }
+    .modal-menu li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-menu li:last-child { border-bottom: none; }
+    .modal-menu-name {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 20px; color: var(--text); margin-bottom: 6px;
+    }
+    
+    .modal-menu-time {
+      font-size: 16px; color: var(--text); margin-bottom: 2px;
+    }
+    .modal-menu-desc {
+      font-size: 14px; color: var(--text-muted); line-height: 1.75;
+    }
+
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background .2s;
+      z-index: 1;
+    }
+    .modal-close:hover { background: var(--white); }
+    .modal-close svg { width: 18px; height: 18px; stroke: var(--text); stroke-width: 2; }
+
+    .svc-more {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--rose);
+      transition: color .3s;
+    }
+    .svc-more::after {
+      content: ' →';
+      transition: margin-left .2s;
+    }
+    .svc:hover .svc-more { color: var(--rose-dark); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stats { gap: 36px; flex-wrap: wrap; }
+    }
+    @media (max-width: 680px) {
+      :root { --section-pad: 80px 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+      .hero { padding: 150px 20px 32px; }
+      .hero-bloom { width: 400px; height: 400px; }
+      .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .stats { gap: 24px; }
+      .stat-num { font-size: 36px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-contact { flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 100%; }
+      .hero-contact-item { white-space: normal; text-align: center; font-size: 14px; justify-content: center; }
+      .hero-contact-item span { font-size: 14px; text-align: center; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .modal-body { padding: 28px 24px 32px; }
+      .modal-title { font-size: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a href="#services" class="skip-link">Skip to content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-en">Han's Skin Care</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Book Now</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-bg-photo" style="background-image: url('images/main-banner.jpg')"></div>
+
+    <svg class="hero-bloom" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bloom-grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#F2CFC5" stop-opacity=".6"/>
+          <stop offset="100%" stop-color="#F9E8E3" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="350" cy="350" r="280" fill="url(#bloom-grad)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".15" transform="rotate(0,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".12" transform="rotate(60,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".1" transform="rotate(120,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".08" transform="rotate(180,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".06" transform="rotate(240,350,350)"/>
+      <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".05" transform="rotate(300,350,350)"/>
+    </svg>
+
+    <p class="hero-label reveal">K-Beauty</p>
+    <h1 class="reveal"><em>Han's</em>  Skin Care</h1>
+    <p class="hero-sub reveal">
+      Facials · Semi-Permanent Makeup · Eyelash Perms
+    </p>
+
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn">Book Your Visit</a>
+      <a href="#" class="btn btn-kakao">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" stroke="none"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.21 4.65 6.6-.15.53-.96 3.4-.99 3.63 0 0-.02.17.09.24.11.06.24.01.24.01.31-.04 3.66-2.4 4.24-2.81.57.08 1.16.13 1.77.13 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>
+        KakaoTalk
+      </a>
+    </div>
+
+    <div class="hero-contact reveal">
+      <div class="hero-contact-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>
+      <a href="https://maps.google.com/?q=5001+Newport+Drive,+Rolling+Meadows,+IL+60008" target="_blank" rel="noopener noreferrer">
+      5001 Newport Drive, Floor 2, Rolling Meadows, IL 60008
+      </a>
+      </span>      
+      </div>
+      <div class="hero-contact-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+18479627633">(847) 962-7633</a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="petal-divider">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="20" rx="12" ry="18" fill="#E8A99A" transform="rotate(-30,20,20)"/>
+      <ellipse cx="40" cy="20" rx="10" ry="16" fill="#F2CFC5" transform="rotate(10,40,20)"/>
+      <ellipse cx="60" cy="20" rx="8" ry="14" fill="#D4847A" transform="rotate(-15,60,20)"/>
+      <ellipse cx="80" cy="20" rx="10" ry="16" fill="#F2CFC5" transform="rotate(20,80,20)"/>
+      <ellipse cx="100" cy="20" rx="12" ry="18" fill="#E8A99A" transform="rotate(30,100,20)"/>
+    </svg>
+  </div>
+
+
+
+  <section class="gallery-strip" aria-label="Gallery">
+    <div class="gallery-strip-head reveal">
+      <p class="label">Our Work</p>
+      <h2 class="heading">A Glimpse of Han's</h2>
+    </div>
+    <div class="gallery-track-wrapper">
+      <div class="gallery-track" id="gallery-track">
+        <div class="gallery-item"><img src="images/facial-1.jpg" alt="Facial treatment" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/facial-2.jpg" alt="Skincare facial" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/eyebrow-1.png" alt="Eyebrow shaping" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/eyebrows-2.jpeg" alt="Semi-permanent eyebrows" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/eyelash-1.jpg" alt="Eyelash service" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/facial-2.png" alt="Skincare treatment" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/main-banner-2.jpg" alt="Han's Skin Care" loading="lazy"></div>
+        <!-- Duplicated for seamless loop -->
+        <div class="gallery-item" aria-hidden="true"><img src="images/facial-1.jpg" alt="" loading="lazy"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="images/facial-2.jpg" alt="" loading="lazy"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="images/eyebrow-1.png" alt="" loading="lazy"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="images/eyebrows-2.jpeg" alt="" loading="lazy"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="images/eyelash-1.jpg" alt="" loading="lazy"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="images/facial-2.png" alt="" loading="lazy"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="images/main-banner-2.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-head reveal">
+        <p class="label">Services</p>
+        <h2 class="heading">What We Offer</h2>
+        <p class="subtext">In a private space tailored exclusively for you, we deliver deep care and dignified beauty.</p>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        </div>
+    </div>
+  </section>
+
+
+  <div class="petal-divider">
+    <svg width="80" height="32" viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(-20,20,16)"/>
+      <ellipse cx="40" cy="16" rx="8" ry="12" fill="#E8A99A" transform="rotate(0,40,16)"/>
+      <ellipse cx="60" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(20,60,16)"/>
+    </svg>
+  </div>
+
+
+  <section class="about" id="about">
+    <div class="about-bg-circle"></div>
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img reveal">
+          <img src="images/facial-1.jpg" alt="Han's Skin Care studio">
+          <div class="about-img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Your Photo</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="label">About</p>
+          <h2 class="heading">Rooted in Care,<br>Guided by <em>Nature</em></h2>
+          <p>Han's Skin Care was founded with a simple belief: that beautiful skin comes from thoughtful, consistent care — not quick fixes. We combine trusted Korean skincare traditions with modern techniques to give every client a personalized experience.</p>
+          <p>Our studio is a calm, welcoming space where you can truly relax while our licensed estheticians take care of the rest.</p>
+          <div class="badges">
+            <span class="badge">K-Beauty</span>
+            <span class="badge">Rejuvenating Facial</span>
+            <span class="badge">All Skin Types</span>
+            <span class="badge">Semi-Permanent Makeup</span>
+            <span class="badge">Eyelash Perm</span>
+          </div>
+          <p class="about-sig">— Han's Skin Care Team</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-head reveal">
+        <p class="label">Testimonials</p>
+        <h2 class="heading">What Our<br>Clients <em>Say</em></h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review reveal">
+          <p class="review-stars">★ ★ ★ ★ ★</p>
+          <p class="review-quote-mark">"</p>
+          <blockquote>my family have been getting pampered here with owner jane for almost a decade! you can trust her expertise and know she has her client's health and beauty as an utmost priority. you leave feeling fabulous!</blockquote>
+          <p class="review-who">— Sonja A.</p>
+        </div>
+        <div class="review reveal">
+          <p class="review-stars">★ ★ ★ ★ ★</p>
+          <p class="review-quote-mark">"</p>
+          <blockquote>Absolutely LOVED my experience here!! Jane is so sweet and has that ✨mother's touch✨ to ease you into much needed pampering. I had a lash lift perm done and am SO happy with the results & attention to detail! Will come again--highly recommend if you're in need of some special care!</blockquote>
+          <p class="review-who">— Katie L.</p>
+        </div>
+        <div class="review reveal">
+          <p class="review-stars">★ ★ ★ ★ ★</p>
+          <p class="review-quote-mark">"</p>
+          <blockquote>Great experiences at Han’s Skin Care! She takes great care of my family and I. Our skin is noticeably healthier and vibrant.</blockquote>
+          <p class="review-who">— Eunice</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="petal-divider">
+    <svg width="80" height="32" viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="20" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(-20,20,16)"/>
+      <ellipse cx="40" cy="16" rx="8" ry="12" fill="#E8A99A" transform="rotate(0,40,16)"/>
+      <ellipse cx="60" cy="16" rx="10" ry="15" fill="#F2CFC5" transform="rotate(20,60,16)"/>
+    </svg>
+  </div>
+
+
+  <section class="contact" id="contact">
+    <div class="contact-bg-shape"></div>
+    <div class="container">
+      <div class="contact-head reveal">
+        <p class="label">Contact</p>
+        <h2 class="heading">Come <em>Visit</em> Us</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <a href="https://maps.google.com/?q=5001+Newport+Drive,+Rolling+Meadows,+IL+60008" target="_blank" rel="noopener noreferrer" class="contact-card-icon" style="border: none;">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </a>
+          <h3>Visit Us</h3>
+          <address>
+            <a href="https://maps.google.com/?q=5001+Newport+Drive,+Rolling+Meadows,+IL+60008" target="_blank" rel="noopener noreferrer">
+              5001 Newport Drive<br>Floor 2<br>Rolling Meadows, IL 60008
+            </a>
+          </address>
+          </div>
+        <div class="contact-card reveal">
+          <a href="tel:+18479627633" class="contact-card-icon" style="border: none;">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+          </a>
+          <h3>Get in Touch</h3>
+          <p>
+            <a href="tel:+18479627633">(847) 962-7633</a><br>
+            <a href="#">KakaoTalk</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Service details">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal-photo" id="modal-photo"></div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-title"></h3>
+        <div class="modal-desc" id="modal-desc"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="footer-logo-en">Han's Skin Care</span>
+    </div>
+    <div class="footer-links">
+      <a href="tel:+18479627633">Phone</a>
+      <a href="#">KakaoTalk</a>
+    </div>
+    <p class="footer-copy">© 2026 Han's Skin Care. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    /* Scroll reveal */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    /* ══════════════════════════════════════════════════════════════
+       SERVICES — edit this array to add, remove, or update services.
+       Each entry controls the card in the grid AND the pop-up modal.
+
+       Fields:
+         key     – unique ID (used internally; no spaces)
+         title   – English title shown on the card and modal
+         img     – image path for both the card thumbnail and modal
+         imgAlt  – alt text for the image
+         summary – short description shown on the card
+         desc    – longer description shown in the modal
+    ══════════════════════════════════════════════════════════════ */
+    const SERVICES = [
+      {
+        key:     'facial',
+        title:   'Facials',
+        img:     'images/facial-2.png',
+        imgAlt:  'Facial treatment',
+        summary: 'Rejuvenate in our exclusive private rooms. We combine over 17 years of experience with advanced lifting technology with premium botanicals to target wrinkles and firm your skin, finished with a specialized neck massage for a contoured, radiant glow.',
+        // Use `menu` to list individual treatments in the pop-up.
+        // Each item: { name, time, desc }
+        menu: [
+          {
+            name:   'Essential Facial',
+            time:   '80 mins',
+            desc:   'A foundational treatment including cleansing, exfoliation, and basic hydration — perfect for first-time visitors or maintenance care.',
+          },
+          {
+            name:   'Intensive Facial',
+            time:   '100 mins',
+            desc:   'Intensive treatment with extractions, a customized mask, and a relaxing facial massage to deeply nourish and rejuvenate the skin.',
+          },
+          {
+            name:   'Premium Care',
+            time:   '110 mins',
+            desc:   '99.9% certified 24K Gold patch and ampoule helps reduce wrinkle, fine lines, spots and prevents premature aging of the skin',
+          },
+          {
+            name:   'HIFU V Life Face Treatment',
+            time:   '110 mins',
+            desc:   'Specialized lifting and contouring treatment using High-Intensity Focused Ultrasound (HIFU) technology to stimulate collagen production and tighten the skin for a more youthful, defined appearance.',
+          },
+          {
+            name:   'LDM',
+            time:   '90 mins',
+            desc:   'Ultra sound that stimulates collagen production and improves skin elasticity for a lifted, youthful appearance. Ideal for sagging or mature skin.',
+          },
+          {
+            name:   'MTS',
+            time:   '60 mins',
+            desc:   'A special ampoule is applied to the skin, and then a device with fine needles creates micro-channels to enhance absorption and stimulate collagen production for improved skin texture and elasticity.',
+          },
+          {
+            name:   'Acne Treatment Facial',
+            time:   '',
+            desc:   'A targeted facial designed to combat acne and blemishes using deep cleansing, exfoliation, and calming ingredients to reduce inflammation and promote clearer skin.',
+          },
+        ],
+      },
+      {
+        key:     'makeup',
+        title:   'Semi-Permanent Makeup',
+        img:     'images/eyebrows-2.jpeg',
+        imgAlt:  'Semi-permanent makeup',
+        summary: 'Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.',
+        desc:    'With years of clinical experience and extensive expertise, we create the perfect shape and natural color tailored to your unique features. We are committed to excellence, ensuring complete professional accountability from the initial procedure to the final touch-up for lasting satisfaction.',
+        menu: [
+          {
+            name:   'Eyebrow',
+            desc:   'Expertly shaped to complement your facial structure. This treatment fills in sparse areas and defines your natural arches for a polished, smudge-proof look.',
+          },
+          {
+            name:   'Eyeliner',
+            desc:   'Subtle pigment applied directly along the lash line. This creates the illusion of sharp, well defined eyes and thicker lashes without the hassle of daily makeup.',
+          },
+          {
+            name:   'Lip',
+            desc:   'A custom-blended tint that restores natural color and softly defines the lip border. It corrects asymmetry and leaves your lips with a healthy, long-lasting flush.',
+          },
+        ],
+      },
+      {
+        key:     'lash',
+        title:   'Eyelash Services',
+        img:     'images/eyelash-1.jpg',
+        imgAlt:  'Eyelash perm',
+        summary: 'Beautifully lifted and curled lashes that open up your eyes and give you a naturally wide-awake, polished look — no extensions needed. Or tint for added depth and drama.',
+        menu: [
+          {
+            name:   'Classic Lash Perm',
+            price:  '$85 ($120 for 2)',
+            desc:   'A semi-permanent treatment that beautifully curls and lifts your natural lashes from base to tip. It instantly opens up your eyes for a brighter, more awakened look without the daily need for a lash curler.',
+          },
+          {
+            name:   'Eyelash Tint',
+            price:  '$25',
+            desc:   'A gentle, custom dye applied to your natural lashes to visibly darken and enhance them. It creates the effortless appearance of wearing mascara while remaining completely smudge-proof.',
+          },
+          {
+            name:   'Eyebrow Tint',
+            price:  '$35',
+            desc:   'A semi-permanent color applied to your brows to enhance their natural shape and thickness. It darkens even the finest hairs, creating a fuller, more defined look that perfectly frames your face.',
+          },
+          
+        ],
+      },
+      // ── To add a new service, copy one block above and change the fields. ──
+    ];
+
+    /* Build a key → entry lookup for the modal, and render the grid cards */
+    const serviceData = {};
+    const grid = document.getElementById('services-grid');
+    SERVICES.forEach(s => {
+      serviceData[s.key] = s;
+
+      /* ── Build card with safe DOM methods (no innerHTML) ── */
+      const card = document.createElement('div');
+      card.className = 'svc reveal';
+      card.dataset.modal = s.key;
+      card.setAttribute('role', 'button');      /* #4 a11y */
+      card.setAttribute('tabindex', '0');        /* #4 a11y */
+      card.setAttribute('aria-label', s.title + ' — Learn More');
+
+      const photoDiv = document.createElement('div');
+      photoDiv.className = 'svc-photo';
+      const img = document.createElement('img');
+      img.src = s.img;
+      img.alt = s.imgAlt;
+      img.loading = 'lazy';                      /* #6 perf */
+      img.decoding = 'async';
+      photoDiv.appendChild(img);
+
+      const body = document.createElement('div');
+      body.className = 'svc-body';
+      const h3 = document.createElement('h3');
+      h3.textContent = s.title;                  /* #3 safe */
+      const p = document.createElement('p');
+      p.textContent = s.summary;                 /* #3 safe */
+      const more = document.createElement('span');
+      more.className = 'svc-more';
+      more.textContent = 'Learn More';
+      body.append(h3, p, more);
+
+      card.append(photoDiv, body);
+      grid.appendChild(card);
+      obs.observe(card);
+    });
+
+    /* ── Modal logic ── */
+    const overlay = document.getElementById('modal-overlay');
+    const modal   = overlay.querySelector('.modal');
+    const modalPhoto = document.getElementById('modal-photo');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc  = document.getElementById('modal-desc');
+    const modalClose = document.getElementById('modal-close');
+    let lastFocused = null;                      /* #4 focus trap */
+
+    function openModal(key) {
+      const d = serviceData[key];
+      if (!d) return;
+
+      /* Photo — safe DOM build */
+      modalPhoto.textContent = '';               /* clear previous */
+      const mImg = document.createElement('img');
+      mImg.src = d.img;
+      mImg.alt = d.title;
+      modalPhoto.appendChild(mImg);
+
+      modalTitle.textContent = d.title;
+
+      /* Description / menu — safe DOM build */
+      modalDesc.textContent = '';                /* clear previous */
+
+      if (d.desc) {
+        const descP = document.createElement('p');
+        descP.style.marginBottom = '20px';
+        descP.textContent = d.desc;
+        modalDesc.appendChild(descP);
+      }
+
+      if (d.menu) {
+        const ul = document.createElement('ul');
+        ul.className = 'modal-menu';
+        d.menu.forEach(item => {
+          const li = document.createElement('li');
+
+          const row = document.createElement('div');
+          row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;';
+          const name = document.createElement('p');
+          name.className = 'modal-menu-name';
+          name.textContent = item.name;
+          row.appendChild(name);
+          if (item.time) {
+            const time = document.createElement('span');
+            time.className = 'modal-menu-time';
+            time.textContent = item.time;
+            row.appendChild(time);
+          }
+          if (item.price) {
+            const price = document.createElement('span');
+            price.className = 'modal-menu-time';
+            price.textContent = item.price;
+            row.appendChild(price);
+          }
+          li.appendChild(row);
+
+          if (item.desc) {
+            const desc = document.createElement('p');
+            desc.className = 'modal-menu-desc';
+            desc.textContent = item.desc;
+            li.appendChild(desc);
+          }
+          ul.appendChild(li);
+        });
+        modalDesc.appendChild(ul);
+      }
+
+      /* Show overlay */
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      /* #4 Focus trap — remember trigger, move focus into modal */
+      lastFocused = document.activeElement;
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();      /* #4 restore focus */
+    }
+
+    /* #4 Focus trap — keep Tab cycling inside the modal while open */
+    modal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = modal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+
+    /* Card click + keyboard activation (#4) */
+    document.querySelectorAll('.svc[data-modal]').forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.modal));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.modal); }
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    /* ── Mobile nav toggle (#9) ── */
+    const navEl = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    function setNavOpen(open) {
+      navEl.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));  /* #4 */
+    }
+
+    navToggle.addEventListener('click', () => {
+      setNavOpen(!navEl.classList.contains('open'));
+    });
+
+    /* Close nav when a link is tapped */
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setNavOpen(false));
+    });
+
+    /* #9 Close nav when clicking outside it */
+    document.addEventListener('click', (e) => {
+      if (navEl.classList.contains('open') && !navEl.contains(e.target)) {
+        setNavOpen(false);
+      }
+    });
+  </script>
+</body>
+</html>
